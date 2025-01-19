@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #7C3AED;
+    --primary-color: #0dc6f5;
     --background-dark: #121212;
     --background-light: #1E1E1E;
     --text-primary: #FFFFFF;
@@ -97,18 +97,19 @@ body {
 }
 
 .cta-button {
-    padding: 1rem 2rem;
+    padding: .4rem 1.2rem;
     font-size: 1.1rem;
     background-color: var(--primary-color);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8cqmax;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .cta-button:hover {
-    background-color: var(--accent-color);
+    background-color: rgb(84, 81, 81);
+    color: #f48727;
 }
 
 /* Featured Categories */
