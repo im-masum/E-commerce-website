@@ -330,11 +330,11 @@ body {
 }
 
 .offer-btn {
-    padding: 0.8rem 1.5rem;
+    padding: 0.4rem 1.2rem;
     background-color: var(--primary-color);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
