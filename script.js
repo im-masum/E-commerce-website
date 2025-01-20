@@ -32,6 +32,39 @@ const products = [
       "https://images.unsplash.com/photo-1486401899868-0e435ed85128?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
     category: "Gaming",
   },
+
+  {
+    id: 1,
+    name: "Wireless Headphones",
+    price: 99.99,
+    image:
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
+    category: "Electronics",
+  },
+  {
+    id: 2,
+    name: "Smart Watch",
+    price: 199.99,
+    image:
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
+    category: "Electronics",
+  },
+  {
+    id: 3,
+    name: "Running Shoes",
+    price: 79.99,
+    image:
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
+    category: "Fashion",
+  },
+  {
+    id: 4,
+    name: "Gaming Console",
+    price: 299.99,
+    image:
+      "https://images.unsplash.com/photo-1486401899868-0e435ed85128?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
+    category: "Gaming",
+  },
 ];
 
 // Function to create product cards
