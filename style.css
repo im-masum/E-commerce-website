@@ -1,6 +1,6 @@
 :root {
     --primary-color: #0dc6f5;
-    --background-dark: #121212;
+    --background-dark: #191818;
     --background-light: #1E1E1E;
     --text-primary: #FFFFFF;
     --text-secondary: #A0A0A0;
@@ -464,11 +464,18 @@ footer {
     .hero-content h1 {
         font-size: 2.5rem;
     }
-
-    .category-card {
-        min-width: 150px;
+    .featured-categories{
+        display: flex;
+        flex-direction: column;
     }
-
+    .category-card {
+        min-width:150px ;
+        font-size: 18px;
+        padding: 0.5rem;
+    }
+    .category-card i{
+        font-size: 32px;
+    }
     .product-card {
         width: 100%;
         max-width: 350px;
