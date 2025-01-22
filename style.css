@@ -93,12 +93,15 @@ body {
         position: fixed;
         top: 4rem;
         left: -100%;
-        width: 100%;
-        height: calc(100vh - 4rem);
+        width: 98%;
+        /* height: calc(100vh - 4rem); */
         background-color: var(--background-light);
         flex-direction: column;
-        padding: 2rem;
-        transition: left 0.3s ease;
+        padding: .5rem;
+        transition: left 0.5s ease;
+        box-shadow: 1px 1px 10px #191818;
+        margin:0 2.5px;
+        border-radius: 10px;
     }
 
     .nav-container.active {
@@ -108,10 +111,14 @@ body {
     .nav-links {
         flex-direction: column;
         text-align: center;
+        gap: 1rem;
     }
-
+    
     .nav-icons {
-        margin-top: 2rem;
+        margin-top: 1rem;
+        justify-content: center;
+
+
     }
 }
 
@@ -457,10 +464,7 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-
+    
     .hero-content h1 {
         font-size: 2.5rem;
     }

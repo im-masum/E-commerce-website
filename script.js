@@ -159,12 +159,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Add scroll event listener for navbar
+// // Add scroll event listener for navbar
 window.addEventListener("scroll", () => {
   const navbar = document.querySelector(".navbar");
   if (window.scrollY > 50) {
     navbar.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.3)";
   } else {
     navbar.style.boxShadow = "none";
-  }
+   }
 });
