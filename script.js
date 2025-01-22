@@ -137,6 +137,26 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
+
+  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+  const navContainer = document.querySelector('.nav-container');
+
+  mobileMenuBtn.addEventListener('click', () => {
+    navContainer.classList.toggle('active');
+    const menuIcon = mobileMenuBtn.querySelector('i');
+    menuIcon.classList.toggle('fa-bars');
+    menuIcon.classList.toggle('fa-times');
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!navContainer.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+      navContainer.classList.remove('active');
+      const menuIcon = mobileMenuBtn.querySelector('i');
+      menuIcon.classList.remove('fa-times');
+      menuIcon.classList.add('fa-bars');
+    }
+  });
 });
 
 // Add scroll event listener for navbar
