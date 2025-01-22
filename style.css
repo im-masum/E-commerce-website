@@ -417,12 +417,14 @@ body {
 
 /* Footer */
 footer {
+    width: 100%;
     background-color: var(--background-light);
-    padding: 4rem 5% 2rem;
+    padding: 1rem 0.2rem;
 }
 
 .footer-content {
     display: flex;
+    padding: 1rem;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 2rem;
@@ -474,8 +476,9 @@ footer {
 
 .footer-bottom {
     text-align: center;
+    width: 100%;
     padding-top: 2rem;
-    border-top: 1px solid var(--text-secondary);
+    border-top: .5px solid rgb(60, 55, 55);
     color: var(--text-secondary);
 }
 
