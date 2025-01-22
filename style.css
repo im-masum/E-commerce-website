@@ -120,7 +120,8 @@ body {
         margin-top: 1rem;
         justify-content: center;
     }
-    .nav-icons i{
+
+    .nav-icons i {
         font-size: 1rem;
     }
 }
@@ -210,17 +211,21 @@ body {
 
 /* Featured Products Section */
 .featured-products {
-    padding: 4rem 5%;
+    padding: 2rem;
+    border: 0.5px solid rgb(39, 38, 38);
+    border-radius: 10px;
+
+
 }
 
 .featured-products h2 {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .product-grid {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -231,6 +236,7 @@ body {
     overflow: hidden;
     width: 300px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: .5px solid rgb(47, 45, 45);
 }
 
 .product-card:hover {
@@ -314,26 +320,33 @@ body {
 
 /* Trending Products */
 .trending-products {
-    padding: 4rem 5%;
+    width: 100%;
+    border: 0.5px solid rgb(39, 38, 38);
+    padding: 1rem 2%;
     background-color: var(--background-light);
+    border-radius: 10px;
 }
 
 .trending-products h2 {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 .product-container {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 /* Special Offers Section */
 .special-offers {
-    padding: 4rem 5%;
+    padding: 1rem 5%;
     background-color: var(--background-light);
+    border: 0.5px solid rgb(39, 38, 38);
+    margin-bottom: 10px;
+    border-radius: 10px;
+
 }
 
 .special-offers h2 {
@@ -372,7 +385,7 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 2rem;
+    padding: .5rem;
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
     color: white;
 }
@@ -388,7 +401,7 @@ body {
 }
 
 .offer-btn {
-    padding: 0.4rem 1.2rem;
+    padding: 0.2rem .5rem;
     background-color: var(--primary-color);
     color: white;
     border: none;
@@ -398,7 +411,8 @@ body {
 }
 
 .offer-btn:hover {
-    background-color: var(--accent-color);
+    background-color: gray;
+    color: #000;
 }
 
 /* Footer */

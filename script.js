@@ -7,6 +7,7 @@ const products = [
     image:
       "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
     category: "Electronics",
+    
   },
   {
     id: 2,
@@ -16,7 +17,7 @@ const products = [
       "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
     category: "Electronics",
   },
-  {
+  {  
     id: 3,
     name: "Running Shoes",
     price: 79.99,
