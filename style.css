@@ -320,11 +320,14 @@ body {
 
 /* Trending Products */
 .trending-products {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     border: 0.5px solid rgb(39, 38, 38);
-    padding: 1rem 2%;
+    padding: 1rem;
     background-color: var(--background-light);
     border-radius: 10px;
+
 }
 
 .trending-products h2 {
@@ -334,9 +337,10 @@ body {
 
 .product-container {
     display: flex;
-    gap: 1rem;
+    gap: .5rem;
     flex-wrap: wrap;
     justify-content: center;
+
 }
 
 /* Special Offers Section */

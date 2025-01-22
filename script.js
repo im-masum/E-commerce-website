@@ -7,7 +7,6 @@ const products = [
     image:
       "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
     category: "Electronics",
-    
   },
   {
     id: 2,
@@ -17,7 +16,7 @@ const products = [
       "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
     category: "Electronics",
   },
-  {  
+  {
     id: 3,
     name: "Running Shoes",
     price: 79.99,
@@ -35,7 +34,7 @@ const products = [
   },
 
   {
-    id: 1,
+    id: 5,
     name: "Wireless Headphones",
     price: 99.99,
     image:
@@ -43,7 +42,7 @@ const products = [
     category: "Electronics",
   },
   {
-    id: 2,
+    id: 6,
     name: "Smart Watch",
     price: 199.99,
     image:
@@ -51,7 +50,7 @@ const products = [
     category: "Electronics",
   },
   {
-    id: 3,
+    id: 7,
     name: "Running Shoes",
     price: 79.99,
     image:
@@ -59,12 +58,21 @@ const products = [
     category: "Fashion",
   },
   {
-    id: 4,
+    id: 8,
     name: "Gaming Console",
     price: 299.99,
     image:
       "https://images.unsplash.com/photo-1486401899868-0e435ed85128?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
     category: "Gaming",
+  },
+
+  {
+    id: 8,
+    name: "Smart Watch",
+    price: 299.99,
+    image:
+      "https://plus.unsplash.com/premium_photo-1712764121254-d9867c694b81?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c21hcnQlMjB3YXRjaHxlbnwwfHwwfHx8MA%3D%3D",
+    category: "Electronics",
   },
 ];
 
@@ -139,23 +147,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-  const navContainer = document.querySelector('.nav-container');
+  const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+  const navContainer = document.querySelector(".nav-container");
 
-  mobileMenuBtn.addEventListener('click', () => {
-    navContainer.classList.toggle('active');
-    const menuIcon = mobileMenuBtn.querySelector('i');
-    menuIcon.classList.toggle('fa-bars');
-    menuIcon.classList.toggle('fa-times');
+  mobileMenuBtn.addEventListener("click", () => {
+    navContainer.classList.toggle("active");
+    const menuIcon = mobileMenuBtn.querySelector("i");
+    menuIcon.classList.toggle("fa-bars");
+    menuIcon.classList.toggle("fa-times");
   });
 
   // Close menu when clicking outside
-  document.addEventListener('click', (e) => {
+  document.addEventListener("click", (e) => {
     if (!navContainer.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-      navContainer.classList.remove('active');
-      const menuIcon = mobileMenuBtn.querySelector('i');
-      menuIcon.classList.remove('fa-times');
-      menuIcon.classList.add('fa-bars');
+      navContainer.classList.remove("active");
+      const menuIcon = mobileMenuBtn.querySelector("i");
+      menuIcon.classList.remove("fa-times");
+      menuIcon.classList.add("fa-bars");
     }
   });
 });
@@ -167,5 +175,5 @@ window.addEventListener("scroll", () => {
     navbar.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.3)";
   } else {
     navbar.style.boxShadow = "none";
-   }
+  }
 });
