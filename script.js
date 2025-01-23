@@ -160,13 +160,13 @@ function createProductCard(product) {
         background-color: var(--background-dark);
         border-radius: 10px;
         overflow: hidden;
-        width: 250px;
+        width: 350px;
         transition: transform 0.3s ease;
         cursor: pointer;
     `;
 
   card.innerHTML = `
-        <img src="${product.image}" alt="${product.name}" style="width: 100%; height: 200px; object-fit: cover;">
+        <img src="${product.image}" alt="${product.name}" style="width: 100%; height: 300px; object-fit: cover;">
         <div style="padding: 1rem;">
             <h3 style="margin-bottom: 0.5rem;">${product.name}</h3>
             <p style="color: var(--text-secondary);">$${product.price}</p>
