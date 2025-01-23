@@ -161,7 +161,7 @@ function createProductCard(product) {
         border-radius: 10px;
         overflow: hidden;
         width: 350px;
-        transition: transform 0.3s ease;
+        transition: transform 0.5s ease;
         cursor: pointer;
     `;
 
