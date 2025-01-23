@@ -3,34 +3,34 @@ const products = [
   {
     id: 1,
     name: "Wireless Headphones",
-    price: 99.99,
+    price: 159.99,
     image:
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
+      "https://images.unsplash.com/photo-1598900863662-da1c3e6dd9d9?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     category: "Electronics",
   },
   {
     id: 2,
-    name: "Smart Watch",
-    price: 199.99,
+    name: "Wireless Headphone",
+    price: 159.99,
     image:
-      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
+      "https://images.unsplash.com/photo-1609255386725-b9b6a8ad829c?q=80&w=1902&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     category: "Electronics",
   },
   {
     id: 3,
-    name: "Running Shoes",
+    name: "Wireless Headphone",
     price: 79.99,
     image:
-      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
-    category: "Fashion",
+      "https://images.unsplash.com/photo-1491927570842-0261e477d937?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "Electronics",
   },
   {
     id: 4,
-    name: "Gaming Console",
-    price: 299.99,
+    name: "Wireless Headphone",
+    price: 99.99,
     image:
-      "https://images.unsplash.com/photo-1486401899868-0e435ed85128?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
-    category: "Gaming",
+      "https://images.unsplash.com/photo-1578517581165-61ec5ab27a19?q=80&w=1943&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "Electronics",
   },
 
   {
@@ -51,11 +51,11 @@ const products = [
   },
   {
     id: 7,
-    name: "Running Shoes",
+    name: "Smart watch",
     price: 79.99,
     image:
-      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
-    category: "Fashion",
+      "https://images.unsplash.com/photo-1557438159-51eec7a6c9e8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "Electronics",
   },
   {
     id: 8,
@@ -67,7 +67,83 @@ const products = [
   },
 
   {
+    id: 9,
+    name: "Smart Watch",
+    price: 299.99,
+    image:
+      "https://plus.unsplash.com/premium_photo-1712764121254-d9867c694b81?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c21hcnQlMjB3YXRjaHxlbnwwfHwwfHx8MA%3D%3D",
+    category: "Electronics",
+  },
+
+
+{
+    id: 1,
+    name: "Wireless Headphones",
+    price: 159.99,
+    image:
+      "https://images.unsplash.com/photo-1598900863662-da1c3e6dd9d9?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "Electronics",
+  },
+  {
+    id: 2,
+    name: "Wireless Headphone",
+    price: 159.99,
+    image:
+      "https://images.unsplash.com/photo-1609255386725-b9b6a8ad829c?q=80&w=1902&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "Electronics",
+  },
+  {
+    id: 3,
+    name: "Wireless Headphone",
+    price: 79.99,
+    image:
+      "https://images.unsplash.com/photo-1491927570842-0261e477d937?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "Electronics",
+  },
+  {
+    id: 4,
+    name: "Wireless Headphone",
+    price: 99.99,
+    image:
+      "https://images.unsplash.com/photo-1578517581165-61ec5ab27a19?q=80&w=1943&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "Electronics",
+  },
+
+  {
+    id: 5,
+    name: "Wireless Headphones",
+    price: 99.99,
+    image:
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
+    category: "Electronics",
+  },
+  {
+    id: 6,
+    name: "Smart Watch",
+    price: 199.99,
+    image:
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
+    category: "Electronics",
+  },
+  {
+    id: 7,
+    name: "Smart watch",
+    price: 79.99,
+    image:
+      "https://images.unsplash.com/photo-1557438159-51eec7a6c9e8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "Electronics",
+  },
+  {
     id: 8,
+    name: "Smart Watch",
+    price: 299.99,
+    image:
+      "https://images.unsplash.com/photo-1461141346587-763ab02bced9?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "Electronics",
+  },
+
+  {
+    id: 9,
     name: "Smart Watch",
     price: 299.99,
     image:
