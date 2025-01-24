@@ -128,7 +128,7 @@ const products = [
   {
     id: 7,
     name: "Smart watch",
-    price: 79.99,
+    price: 179.99,
     image:
       "https://images.unsplash.com/photo-1557438159-51eec7a6c9e8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     category: "Electronics",
@@ -136,7 +136,7 @@ const products = [
   {
     id: 8,
     name: "Smart Watch",
-    price: 299.99,
+    price: 199.99,
     image:
       "https://images.unsplash.com/photo-1461141346587-763ab02bced9?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     category: "Electronics",
@@ -145,7 +145,7 @@ const products = [
   {
     id: 9,
     name: "Smart Watch",
-    price: 299.99,
+    price: 199.99,
     image:
       "https://plus.unsplash.com/premium_photo-1712764121254-d9867c694b81?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c21hcnQlMjB3YXRjaHxlbnwwfHwwfHx8MA%3D%3D",
     category: "Electronics",
