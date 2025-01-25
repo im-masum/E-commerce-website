@@ -77,7 +77,7 @@ const products = [
 
 
 {
-    id: 1,
+    id: 10,
     name: "Wireless Headphones",
     price: 159.99,
     image:
@@ -85,7 +85,7 @@ const products = [
     category: "Electronics",
   },
   {
-    id: 2,
+    id: 11,
     name: "Wireless Headphone",
     price: 159.99,
     image:
@@ -93,7 +93,7 @@ const products = [
     category: "Electronics",
   },
   {
-    id: 3,
+    id: 12,
     name: "Wireless Headphone",
     price: 79.99,
     image:
@@ -101,7 +101,7 @@ const products = [
     category: "Electronics",
   },
   {
-    id: 4,
+    id: 13,
     name: "Wireless Headphone",
     price: 99.99,
     image:
@@ -110,7 +110,7 @@ const products = [
   },
 
   {
-    id: 5,
+    id: 14,
     name: "Wireless Headphones",
     price: 99.99,
     image:
@@ -118,7 +118,7 @@ const products = [
     category: "Electronics",
   },
   {
-    id: 6,
+    id: 15,
     name: "Smart Watch",
     price: 199.99,
     image:
@@ -126,7 +126,7 @@ const products = [
     category: "Electronics",
   },
   {
-    id: 7,
+    id: 16,
     name: "Smart watch",
     price: 179.99,
     image:
@@ -134,7 +134,7 @@ const products = [
     category: "Electronics",
   },
   {
-    id: 8,
+    id: 17,
     name: "Smart Watch",
     price: 199.99,
     image:
@@ -143,7 +143,7 @@ const products = [
   },
 
   {
-    id: 9,
+    id: 18,
     name: "Smart Watch",
     price: 199.99,
     image:
