@@ -174,7 +174,7 @@ function createProductCard(product) {
                            color: white; 
                            border: none; 
                            padding: 0.5rem 1rem; 
-                           border-radius: 5px; 
+                           border-radius: 10px; 
                            margin-top: 1rem;
                            cursor: pointer;">
                 Add to Cart
