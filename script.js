@@ -2,7 +2,7 @@
 const products = [
   {
     id: 1,
-    name: "Wireless Headphones",
+    name: "Headphones",
     price: 159.99,
     image:
       "https://images.unsplash.com/photo-1598900863662-da1c3e6dd9d9?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -10,7 +10,7 @@ const products = [
   },
   {
     id: 2,
-    name: "Wireless Headphone",
+    name: "Headphone",
     price: 159.99,
     image:
       "https://images.unsplash.com/photo-1609255386725-b9b6a8ad829c?q=80&w=1902&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -18,7 +18,7 @@ const products = [
   },
   {
     id: 3,
-    name: "Wireless Headphone",
+    name: "Headphone",
     price: 79.99,
     image:
       "https://images.unsplash.com/photo-1491927570842-0261e477d937?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -26,7 +26,7 @@ const products = [
   },
   {
     id: 4,
-    name: "Wireless Headphone",
+    name: "Headphone",
     price: 99.99,
     image:
       "https://images.unsplash.com/photo-1578517581165-61ec5ab27a19?q=80&w=1943&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -35,7 +35,7 @@ const products = [
 
   {
     id: 5,
-    name: "Wireless Headphones",
+    name: "Headphones",
     price: 99.99,
     image:
       "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
@@ -77,7 +77,7 @@ const products = [
 
   {
     id: 10,
-    name: "Wireless Headphones",
+    name: "Headphones",
     price: 159.99,
     image:
       "https://images.unsplash.com/photo-1598900863662-da1c3e6dd9d9?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -85,7 +85,7 @@ const products = [
   },
   {
     id: 11,
-    name: "Wireless Headphone",
+    name: "Headphone",
     price: 159.99,
     image:
       "https://images.unsplash.com/photo-1609255386725-b9b6a8ad829c?q=80&w=1902&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -93,7 +93,7 @@ const products = [
   },
   {
     id: 12,
-    name: "Wireless Headphone",
+    name: "Headphone",
     price: 79.99,
     image:
       "https://images.unsplash.com/photo-1491927570842-0261e477d937?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -101,7 +101,7 @@ const products = [
   },
   {
     id: 13,
-    name: "Wireless Headphone",
+    name: "Headphone",
     price: 99.99,
     image:
       "https://images.unsplash.com/photo-1578517581165-61ec5ab27a19?q=80&w=1943&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -110,7 +110,7 @@ const products = [
 
   {
     id: 14,
-    name: "Wireless Headphones",
+    name: "Headphones",
     price: 99.99,
     image:
       "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
