@@ -66,7 +66,7 @@ body {
     transition: color 0.3s ease;
 }
 
-.nav-links a:hover{
+.nav-links a:hover {
     color: var(--primary-color);
 }
 
@@ -420,7 +420,7 @@ body {
     color: #000;
 }
 
-.contact-page{
+.contact-page {
     display: flex;
     width: 100%;
     align-items: center;
@@ -430,30 +430,43 @@ body {
     gap: 2rem;
 }
 
-.about-page{
+.about-page {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    padding: 1rem; 
-    box-shadow: ;
+    padding: 1rem;
+    background-color: var(--background-light);
+    margin: .2rem auto;
+
 }
-.about-page h3{
+
+.about-page h3 {
     color: #085567;
-
+    padding: 10px;
+    border-bottom: 3px solid;
+    border-radius: 8px;
 }
-.about-page ul{
+
+.about-page ul {
     list-style: none;
-    margin-top: 1rem;
+    padding: .5rem 2rem;
+    align-items: center;
+    justify-content: center;
 }
-.about-page ul li{
- gap: 20px;
-}
-.about-page ul li a{
- text-decoration: none;
- color: #FFFFFF;
 
+.about-page ul li {
+    padding: 10px;
+}
+
+.about-page ul li a {
+    text-decoration: none;
+    color: #FFFFFF;
+    transition: .3s;
+}
+.about-page ul li a:hover{
+    color: #085567;
 }
 
 /* Footer */
