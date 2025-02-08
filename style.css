@@ -430,6 +430,32 @@ body {
     gap: 2rem;
 }
 
+.about-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem; 
+    box-shadow: ;
+}
+.about-page h3{
+    color: #085567;
+
+}
+.about-page ul{
+    list-style: none;
+    margin-top: 1rem;
+}
+.about-page ul li{
+ gap: 20px;
+}
+.about-page ul li a{
+ text-decoration: none;
+ color: #FFFFFF;
+
+}
+
 /* Footer */
 footer {
     width: 100%;
@@ -496,6 +522,7 @@ footer {
     border-top: .5px solid rgb(60, 55, 55);
     color: var(--text-secondary);
 }
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
