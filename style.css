@@ -422,63 +422,6 @@ body {
 
 
 
-.contact-page {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 2rem;
-    gap: 2rem;
-}
-.contact-page h3{
-    color: #085567;
-    padding: 10px;
-    border-bottom: 3px solid;
-    border-radius: 8px;
-}
-
-
-.about-page {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    padding: 1rem;
-    background-color: var(--background-light);
-    margin: .2rem auto;
-    text-align: center;
-
-}
-
-.about-page h3 {
-
-    color: #085567;
-    padding: 10px;
-    border-bottom: 3px solid;
-    border-radius: 8px;
-}
-
-.about-page ul {
-    list-style: none;
-    padding: .5rem 2rem;
-    align-items: center;
-    justify-content: center;
-}
-
-.about-page ul li {
-    padding: 10px;
-}
-
-.about-page ul li a {
-    text-decoration: none;
-    color: #FFFFFF;
-    transition: .3s;
-}
-.about-page ul li a:hover{
-    color: #085567;
-}
 
 /* Footer */
 footer {
@@ -548,6 +491,84 @@ footer {
     color: var(--text-secondary);
 }
 
+/* ======Pages==== */
+.categories{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+.categories h2{
+    color: #085567;
+    padding: .5rem;
+    border-bottom: 3px solid;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+.categories .category-container{
+    width: 100%;
+    padding: .5rem;
+}
+
+.contact-page {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+}
+.contact-page h3{
+    color: #085567;
+    padding: 10px;
+    border-bottom: 3px solid;
+    border-radius: 8px;
+}
+
+
+.about-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--background-light);
+    margin: .2rem auto;
+    text-align: center;
+
+}
+
+.about-page h3 {
+
+    color: #085567;
+    padding: 10px;
+    border-bottom: 3px solid;
+    border-radius: 8px;
+}
+
+.about-page ul {
+    list-style: none;
+    padding: .5rem 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-page ul li {
+    padding: 10px;
+}
+
+.about-page ul li a {
+    text-decoration: none;
+    color: #FFFFFF;
+    transition: .3s;
+}
+.about-page ul li a:hover{
+    color: #085567;
+}
 
 
 /* Responsive Design */
