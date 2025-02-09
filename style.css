@@ -475,7 +475,7 @@ footer {
 .social-icons a {
     color: var(--text-secondary);
     font-size: 1.5rem;
-    transition:  0.5s ease;
+    transition: 0.5s ease;
 }
 
 .social-icons a:hover {
@@ -492,7 +492,7 @@ footer {
 }
 
 /* ======Pages==== */
-.categories{
+.categories {
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -500,14 +500,16 @@ footer {
     align-items: center;
     padding: 1rem;
 }
-.categories h2{
+
+.categories h2 {
     color: #085567;
     padding: .5rem;
     border-bottom: 3px solid;
     margin-bottom: 1rem;
     border-radius: 8px;
 }
-.categories .category-container{
+
+.categories .category-container {
     width: 100%;
     padding: .5rem;
 }
@@ -519,9 +521,13 @@ footer {
     justify-content: center;
     flex-direction: column;
     padding: 2rem;
-    gap: 2rem;
+    gap: 1rem;
+    background-color: var(--background-light);
+    margin: 10px auto;
+
 }
-.contact-page h3{
+
+.contact-page h3 {
     color: #085567;
     padding: 10px;
     border-bottom: 3px solid;
@@ -566,7 +572,8 @@ footer {
     color: #FFFFFF;
     transition: .3s;
 }
-.about-page ul li a:hover{
+
+.about-page ul li a:hover {
     color: #085567;
 }
 
