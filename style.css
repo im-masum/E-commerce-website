@@ -577,6 +577,19 @@ footer {
     color: #085567;
 }
 
+.deals {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid;
+    padding: 1rem;
+    margin: 10px auto;
+    background-color: var(--background-light);
+
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
