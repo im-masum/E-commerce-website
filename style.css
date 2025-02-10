@@ -492,48 +492,6 @@ footer {
 }
 
 /* ======Pages==== */
-.categories {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-}
-
-.categories h2 {
-    color: #085567;
-    padding: .5rem;
-    border-bottom: 3px solid;
-    margin-bottom: 1rem;
-    border-radius: 8px;
-}
-
-.categories .category-container {
-    width: 100%;
-    padding: .5rem;
-}
-
-.contact-page {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 2rem;
-    gap: 1rem;
-    background-color: var(--background-light);
-    margin: 10px auto;
-
-}
-
-.contact-page h3 {
-    color: #085567;
-    padding: 10px;
-    border-bottom: 3px solid;
-    border-radius: 8px;
-}
-
 
 .about-page {
     display: flex;
@@ -577,19 +535,95 @@ footer {
     color: #085567;
 }
 
+.categories {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+    background-color: rgb(22, 22, 22);
+    margin: 10px auto;
+
+
+}
+
+.categories h2 {
+    color: #085567;
+    padding: .5rem;
+    border-bottom: 3px solid;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+.categories .category-container {
+    width: 100%;
+    padding: .5rem;
+}
+
+.contact-page {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1rem;
+    background-color: var(--background-light);
+    margin: 10px auto;
+
+}
+
+.contact-page h3 {
+    color: #085567;
+    padding: 10px;
+    border-bottom: 3px solid;
+    border-radius: 8px;
+}
+
+
+
 .deals {
     width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid;
     padding: 1rem;
     margin: 10px auto;
     background-color: var(--background-light);
 
 }
 
+.deals h2 {
+    color: #085567;
+    padding: .5rem;
+    border-bottom: 3px solid;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.products {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    margin: 10px auto;
+    background-color: var(--background-light);
+
+}
+
+.products h2 {
+    color: #085567;
+    padding: .5rem;
+    border-bottom: 3px solid;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
