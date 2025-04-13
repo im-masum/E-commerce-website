@@ -43,8 +43,10 @@ body {
 }
 
 .nav-container {
+    width: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 20rem;
 }
 
@@ -74,7 +76,11 @@ body {
     display: flex;
     gap: 1.5rem;
 }
-
+.nav-icons input{
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+}
 .nav-icons a {
     color: var(--text-primary);
     font-size: 1.2rem;
