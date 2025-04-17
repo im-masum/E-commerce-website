@@ -1,3 +1,4 @@
+ let ctaBtn = document.getElementById("ctaBtn");
 // Sample product data
 const products = [
   {
