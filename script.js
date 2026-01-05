@@ -1,3 +1,19 @@
+// Apply saved theme as early as possible to avoid flash
+(function () {
+  try {
+    const saved = localStorage.getItem("theme");
+    const prefersLight =
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: light)").matches;
+    const theme = saved ? saved : prefersLight ? "light" : "dark";
+    if (theme === "light")
+      document.documentElement.classList.add("light-theme");
+    else document.documentElement.classList.remove("light-theme");
+  } catch (e) {
+    // ignore
+  }
+})();
+
 let ctaBtn = document.getElementById("ctaBtn");
 // Sample product data
 const products = [
