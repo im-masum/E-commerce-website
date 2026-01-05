@@ -7,6 +7,16 @@
     --accent-color: #9D4EDD;
 }
 
+/* Light theme overrides (applies when .light-theme is set on <html> or <body>) */
+.light-theme {
+    --primary-color: #085567;
+    --background-dark: #ffffff;
+    --background-light: #f4f6f8;
+    --text-primary: #0f1720;
+    --text-secondary: #6b7280;
+    --accent-color: #7c3aed;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -17,6 +27,11 @@
 body {
     background-color: var(--background-dark);
     color: var(--text-primary);
+}
+
+/* Smooth transition when switching themes */
+body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-content {
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 
 /* Navbar Styles */
@@ -101,6 +116,28 @@ body {
 
 .nav-icons a:hover {
     color: var(--primary-color);
+}
+
+/* Theme toggle button in navbar */
+.theme-toggle {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: var(--text-primary);
+    padding: .35rem .5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle i {
+    font-size: 1rem;
+}
+
+.theme-toggle:hover {
+    color: var(--primary-color);
+    border-color: rgba(9, 122, 141, 0.16);
 }
 
 @media screen and (max-width: 768px) {

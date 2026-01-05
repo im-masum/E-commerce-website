@@ -1,4 +1,4 @@
- let ctaBtn = document.getElementById("ctaBtn");
+let ctaBtn = document.getElementById("ctaBtn");
 // Sample product data
 const products = [
   {
@@ -242,6 +242,49 @@ document.addEventListener("DOMContentLoaded", () => {
       menuIcon.classList.add("fa-bars");
     }
   });
+
+  // Theme (dark/light) toggle — persists choice in localStorage
+  const themeToggleBtn = document.getElementById("themeToggle");
+  const rootEl = document.documentElement || document.body;
+
+  function applyTheme(theme) {
+    if (theme === "light") {
+      rootEl.classList.add("light-theme");
+      if (themeToggleBtn)
+        themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+    } else {
+      rootEl.classList.remove("light-theme");
+      if (themeToggleBtn)
+        themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+    }
+    try {
+      localStorage.setItem("theme", theme);
+    } catch (e) {
+      /* ignore */
+    }
+  }
+
+  // Initialize theme from saved preference or system setting
+  try {
+    let savedTheme = localStorage.getItem("theme");
+    if (!savedTheme) {
+      savedTheme =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: light)").matches
+          ? "light"
+          : "dark";
+    }
+    applyTheme(savedTheme);
+  } catch (e) {
+    // ignore localStorage errors
+  }
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener("click", () => {
+      const currentlyLight = rootEl.classList.contains("light-theme");
+      applyTheme(currentlyLight ? "dark" : "light");
+    });
+  }
 });
 
 // // Add scroll event listener for navbar
