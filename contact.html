@@ -36,12 +36,67 @@
         </nav>
     </header>
     <section class="contact-page">
-    <h3>Connect With Us</h3>
-    <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-    </div>
+        <div class="contact-container">
+            <div class="contact-form">
+                <h2>Get in touch</h2>
+                <p class="muted">Have a question or feedback? Send us a message and we'll respond within 1 business day.
+                </p>
+                <form id="contactForm" action="#" method="post" novalidate>
+                    <label for="name">Full name</label>
+                    <input id="name" name="name" type="text" placeholder="Your name" required aria-required="true">
+
+                    <label for="email">Email address</label>
+                    <input id="email" name="email" type="email" placeholder="you@example.com" required
+                        aria-required="true">
+
+                    <label for="subject">Subject</label>
+                    <input id="subject" name="subject" type="text" placeholder="Subject" required>
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Write your message here..."
+                        required></textarea>
+
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
+
+            <aside class="contact-info">
+                <h3>Contact details</h3>
+                <p class="muted">Prefer to reach us directly? Use the details below.</p>
+
+                <div class="info-block">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <strong>Email</strong>
+                        <p><a href="mailto:support@shophub.com">support@shophub.com</a></p>
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <strong>Phone</strong>
+                        <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <strong>Address</strong>
+                        <p>123 Market Street, Suite 100<br>Cityville, ST 12345</p>
+                    </div>
+                </div>
+
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+
+                <div class="map-placeholder" aria-hidden="true">Map placeholder</div>
+            </aside>
+        </div>
     </section>
 
 
