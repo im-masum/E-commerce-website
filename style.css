@@ -58,6 +58,9 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
     padding: 1rem 1.25rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     border: .5px solid rgba(255, 255, 255, 0.04);
+    transform: translateY(8px);
+    opacity: 0;
+    transition: transform 220ms ease, opacity 220ms ease;
 }
 
 .user-modal header {
@@ -89,7 +92,7 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
     padding: .6rem .8rem;
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.06);
-    background: rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.02);
     color: var(--text-primary);
 }
 
@@ -113,6 +116,58 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
         width: 94%;
         padding: .8rem;
     }
+}
+
+/* overlay active shows modal animation */
+.user-modal-overlay.active .user-modal {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Light theme tweaks for modal and inputs */
+.light-theme .user-modal-overlay {
+    background: rgba(0, 0, 0, 0.28);
+}
+
+.light-theme .user-modal {
+    border: 1px solid rgba(16, 24, 32, 0.06);
+    box-shadow: 0 8px 20px rgba(16, 24, 32, 0.12);
+}
+
+.light-theme .user-modal input {
+    background: #ffffff;
+    border: 1px solid rgba(16, 24, 32, 0.08);
+    color: var(--text-primary);
+}
+
+.light-theme .user-modal .close-btn {
+    color: var(--text-primary);
+}
+
+/* Focus styles */
+.user-modal input:focus, .user-modal .close-btn:focus, .user-modal button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(8, 85, 103, 0.12);
+    border-color: var(--primary-color);
+}
+
+/* Primary CTA inside modal */
+.user-modal .cta-button {
+    padding: .5rem .9rem;
+    border-radius: 8px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.user-modal .cta-button:hover {
+    background: var(--accent-color);
+}
+
+/* higher contrast when overlay active */
+.user-modal-overlay.active {
+    backdrop-filter: blur(3px);
 }
 
 /* Navbar Styles */

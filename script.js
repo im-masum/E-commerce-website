@@ -281,6 +281,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const overlay = document.createElement("div");
         overlay.id = "userModalOverlay";
         overlay.className = "user-modal-overlay";
+        overlay.setAttribute("aria-hidden", "true");
 
         overlay.innerHTML = `
           <div class="user-modal" role="dialog" aria-modal="true" aria-labelledby="userModalTitle">
@@ -310,9 +311,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         function hide() {
           overlay.classList.remove("active");
-          // restore focus to user icon if possible
-          const userLink = document.querySelector(".nav-icons a");
-          if (userLink) userLink.focus();
+          overlay.setAttribute("aria-hidden", "true");
+          // restore focus to the user icon if possible
+          const userLink = document.querySelector(".nav-icons a .fa-user");
+          if (userLink && userLink.parentElement)
+            userLink.parentElement.focus();
         }
 
         closeBtn.addEventListener("click", hide);
