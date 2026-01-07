@@ -272,6 +272,117 @@ document.addEventListener("DOMContentLoaded", () => {
       rootEl.classList.remove("light-theme");
       if (themeToggleBtn)
         themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+
+      /* ---------- User modal (login/register) ---------- */
+      // Create modal HTML once
+      function createUserModal() {
+        if (document.getElementById("userModalOverlay")) return;
+
+        const overlay = document.createElement("div");
+        overlay.id = "userModalOverlay";
+        overlay.className = "user-modal-overlay";
+
+        overlay.innerHTML = `
+          <div class="user-modal" role="dialog" aria-modal="true" aria-labelledby="userModalTitle">
+            <header>
+              <h3 id="userModalTitle">Sign in</h3>
+              <button class="close-btn" aria-label="Close user form">✕</button>
+            </header>
+            <div class="modal-body">
+              <p class="muted">Sign in to access your account, orders and saved items.</p>
+              <form id="userForm">
+                <input id="userEmail" type="email" placeholder="Email address" required aria-required="true">
+                <input id="userPassword" type="password" placeholder="Password" required aria-required="true">
+                <div class="form-row">
+                  <label style="display:flex;align-items:center;gap:.4rem;"><input type="checkbox" id="rememberMe"> Remember</label>
+                </div>
+                <button type="submit" class="cta-button cta">Sign in</button>
+              </form>
+            </div>
+          </div>
+        `;
+
+        document.body.appendChild(overlay);
+
+        // handlers
+        const closeBtn = overlay.querySelector(".close-btn");
+        const modal = overlay.querySelector(".user-modal");
+
+        function hide() {
+          overlay.classList.remove("active");
+          // restore focus to user icon if possible
+          const userLink = document.querySelector(".nav-icons a");
+          if (userLink) userLink.focus();
+        }
+
+        closeBtn.addEventListener("click", hide);
+
+        overlay.addEventListener("click", (e) => {
+          if (e.target === overlay) hide();
+        });
+
+        // close on ESC
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && overlay.classList.contains("active"))
+            hide();
+        });
+
+        // form submit
+        const userForm = overlay.querySelector("#userForm");
+        userForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const email = overlay.querySelector("#userEmail").value;
+          // Simple confirmation (no backend)
+          overlay.querySelector(
+            ".modal-body"
+          ).innerHTML = `<p class="muted">Signed in as <strong>${escapeHtml(
+            email
+          )}</strong>.</p>`;
+          setTimeout(() => hide(), 900);
+        });
+      }
+
+      function escapeHtml(str) {
+        return String(str).replace(
+          /[&<>"'`]/g,
+          (s) =>
+            ({
+              "&": "&amp;",
+              "<": "&lt;",
+              ">": "&gt;",
+              '"': "&quot;",
+              "'": "&#39;",
+              "`": "&#96;",
+            }[s])
+        );
+      }
+
+      function showUserModal() {
+        createUserModal();
+        const overlay = document.getElementById("userModalOverlay");
+        if (!overlay) return;
+        overlay.classList.add("active");
+        // focus first input
+        const first = overlay.querySelector("#userEmail");
+        if (first) first.focus();
+      }
+
+      function toggleUserModal() {
+        const overlay = document.getElementById("userModalOverlay");
+        if (overlay && overlay.classList.contains("active"))
+          overlay.classList.remove("active");
+        else showUserModal();
+      }
+
+      // Attach click handlers to user icon(s)
+      document.querySelectorAll(".nav-icons a").forEach((a) => {
+        if (a.querySelector(".fa-user")) {
+          a.addEventListener("click", (e) => {
+            e.preventDefault();
+            toggleUserModal();
+          });
+        }
+      });
     }
     try {
       localStorage.setItem("theme", theme);
