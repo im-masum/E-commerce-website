@@ -219,10 +219,93 @@ function displayProducts() {
 }
 
 // Function to handle adding items to cart
+// Cart helpers
+function getCart() {
+  try {
+    return JSON.parse(localStorage.getItem("shop_cart") || "[]");
+  } catch (e) {
+    return [];
+  }
+}
+
+function saveCart(cart) {
+  try {
+    localStorage.setItem("shop_cart", JSON.stringify(cart));
+  } catch (e) {}
+}
+
+function findProductById(id) {
+  return products.find((p) => Number(p.id) === Number(id));
+}
+
+function updateCartBadge() {
+  // ensure badge exists next to cart icon
+  const cartIconAnchor = Array.from(
+    document.querySelectorAll(".nav-icons a")
+  ).find((a) => a.querySelector(".fa-shopping-cart"));
+  if (!cartIconAnchor) return;
+  let badge = cartIconAnchor.querySelector(".cart-count");
+  const cart = getCart();
+  const total = cart.reduce((s, it) => s + (it.qty || 1), 0);
+  if (!badge) {
+    badge = document.createElement("span");
+    badge.className = "cart-count";
+    cartIconAnchor.appendChild(badge);
+  }
+  badge.textContent = total;
+  badge.style.display = total > 0 ? "inline-block" : "none";
+}
+
+function showToast(msg, timeout = 1400) {
+  let toast = document.querySelector(".site-toast");
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.className = "site-toast";
+    document.body.appendChild(toast);
+  }
+  toast.textContent = msg;
+  toast.classList.add("show");
+  clearTimeout(toast._t);
+  toast._t = setTimeout(() => toast.classList.remove("show"), timeout);
+}
+
+// Function to handle adding items to cart
 function addToCart(productId) {
-  // TODO: Implement cart functionality
-  console.log(`Product ${productId} added to cart`);
-  alert("Product added to cart!");
+  const id = Number(productId);
+  const product = findProductById(id);
+  const cart = getCart();
+  if (product) {
+    const existing = cart.find((i) => Number(i.id) === id);
+    if (existing) existing.qty = (existing.qty || 1) + 1;
+    else
+      cart.push({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        image: product.image,
+        qty: 1,
+      });
+    saveCart(cart);
+    updateCartBadge();
+    showToast(`${product.name} added to cart`);
+    // Visual feedback on any clicked button — find visible add-to-cart button for this product
+    const selectors = document.querySelectorAll(".add-to-cart");
+    selectors.forEach((btn) => {
+      // if button has data-product-id or data-id
+      const pid =
+        btn.dataset.productId ||
+        btn.dataset.id ||
+        btn.getAttribute("data-product-id") ||
+        btn.getAttribute("data-id");
+      if (pid && Number(pid) === id) {
+        btn.classList.add("added");
+        setTimeout(() => btn.classList.remove("added"), 600);
+      }
+    });
+  } else {
+    // fallback: not found in products list
+    showToast("Added to cart");
+  }
 }
 
 // Initialize the page
@@ -272,6 +355,11 @@ document.addEventListener("DOMContentLoaded", () => {
       rootEl.classList.remove("light-theme");
       if (themeToggleBtn)
         themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+
+      // Update cart badge on load
+      try {
+        updateCartBadge();
+      } catch (e) {}
 
       /* ---------- User modal (login/register) ---------- */
       // Create modal HTML once
