@@ -228,6 +228,112 @@ function getCart() {
   }
 }
 
+// CART PAGE: render cart details if on cart.html
+function renderCartPage() {
+  const cartRoot = document.getElementById("cartPage");
+  if (!cartRoot) return;
+
+  const cartListEl = document.getElementById("cartList");
+  const cartSummaryEl = document.getElementById("cartSummary");
+  const cart = getCart();
+
+  if (!cart || !cart.length) {
+    cartListEl.innerHTML = '<div class="cart-empty">Your cart is empty.</div>';
+    cartSummaryEl.innerHTML = "<div></div>";
+    updateCartBadge();
+    return;
+  }
+
+  // build list
+  cartListEl.innerHTML = "";
+  cart.forEach((item) => {
+    const el = document.createElement("div");
+    el.className = "cart-item";
+    el.innerHTML = `
+        <img src="${item.image || ""}" alt="${escapeHtml(item.name)}">
+        <div class="meta">
+          <h4>${escapeHtml(item.name)}</h4>
+          <div class="muted">Unit: $${Number(item.price).toFixed(2)}</div>
+        </div>
+        <div class="controls">
+          <label>Qty <input type="number" min="1" value="${
+            item.qty || 1
+          }" data-id="${item.id}" class="cart-qty"></label>
+          <button class="remove-cart" data-id="${item.id}">Remove</button>
+          <div class="muted">Subtotal: $<span class="item-sub">${(
+            Number(item.price) * (item.qty || 1)
+          ).toFixed(2)}</span></div>
+        </div>
+      `;
+    cartListEl.appendChild(el);
+  });
+
+  function computeTotal() {
+    return cart.reduce(
+      (s, i) => s + (Number(i.price) || 0) * (Number(i.qty) || 1),
+      0
+    );
+  }
+
+  cartSummaryEl.innerHTML = `
+      <div><strong>Total:</strong> $${computeTotal().toFixed(2)}</div>
+      <div>
+        <button id="clearCart" class="cta-button">Clear cart</button>
+        <button id="checkoutBtn" class="cta-button">Checkout</button>
+      </div>
+    `;
+
+  // attach events
+  cartListEl.querySelectorAll(".cart-qty").forEach((input) => {
+    input.addEventListener("change", (e) => {
+      const id = e.target.dataset.id;
+      let v = parseInt(e.target.value, 10);
+      if (!v || v < 1) v = 1;
+      const c = getCart();
+      const it = c.find((x) => String(x.id) === String(id));
+      if (it) {
+        it.qty = v;
+        saveCart(c);
+        renderCartPage();
+        updateCartBadge();
+      }
+    });
+  });
+
+  cartListEl.querySelectorAll(".remove-cart").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      const id = e.target.dataset.id;
+      let c = getCart();
+      c = c.filter((x) => String(x.id) !== String(id));
+      saveCart(c);
+      renderCartPage();
+      updateCartBadge();
+      showToast("Item removed");
+    });
+  });
+
+  const clearBtn = document.getElementById("clearCart");
+  if (clearBtn)
+    clearBtn.addEventListener("click", () => {
+      saveCart([]);
+      renderCartPage();
+      updateCartBadge();
+      showToast("Cart cleared");
+    });
+
+  const checkoutBtn = document.getElementById("checkoutBtn");
+  if (checkoutBtn)
+    checkoutBtn.addEventListener("click", () => {
+      // placeholder checkout
+      showToast("Checkout is not implemented in this demo");
+    });
+}
+
+// call render once on load
+try {
+  renderCartPage();
+} catch (e) {}
+
 function saveCart(cart) {
   try {
     localStorage.setItem("shop_cart", JSON.stringify(cart));
