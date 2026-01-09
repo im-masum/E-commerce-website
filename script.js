@@ -228,6 +228,22 @@ function getCart() {
   }
 }
 
+// escapeHtml: small utility used in multiple places
+function escapeHtml(str) {
+  return String(str).replace(
+    /[&<>"'`]/g,
+    (s) =>
+      ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;",
+        "`": "&#96;",
+      }[s])
+  );
+}
+
 // CART PAGE: render cart details if on cart.html
 function renderCartPage() {
   const cartRoot = document.getElementById("cartPage");
@@ -285,9 +301,18 @@ function renderCartPage() {
     );
   }
 
+  const subtotal = computeTotal();
+  // simple shipping rule: free over $100 otherwise $5
+  const shipping = subtotal === 0 ? 0 : subtotal >= 100 ? 0 : 5;
+  const grand = subtotal + shipping;
+
   cartSummaryEl.innerHTML = `
-      <div><strong>Total:</strong> $${computeTotal().toFixed(2)}</div>
-      <div>
+      <div class="totals">
+        <span class="subtotal">Subtotal: $${subtotal.toFixed(2)}</span>
+        <span class="shipping">Shipping: $${shipping.toFixed(2)}</span>
+        <span class="grand">Grand total: $${grand.toFixed(2)}</span>
+      </div>
+      <div class="actions">
         <button id="clearCart" class="cta-button">Clear cart</button>
         <button id="checkoutBtn" class="cta-button">Checkout</button>
       </div>
@@ -343,21 +368,37 @@ function renderCartPage() {
     btn.addEventListener("click", (e) => {
       const id = e.target.dataset.id;
       let c = getCart();
+      // backup removed item for undo
+      const removed = c.find((x) => String(x.id) === String(id));
       c = c.filter((x) => String(x.id) !== String(id));
       saveCart(c);
       renderCartPage();
       updateCartBadge();
-      showToast("Item removed");
+      // show undo toast
+      showUndoToast("Item removed", () => {
+        if (removed) {
+          const cur = getCart();
+          cur.push(removed);
+          saveCart(cur);
+          renderCartPage();
+          updateCartBadge();
+        }
+      });
     });
   });
 
   const clearBtn = document.getElementById("clearCart");
   if (clearBtn)
     clearBtn.addEventListener("click", () => {
+      const prev = getCart();
       saveCart([]);
       renderCartPage();
       updateCartBadge();
-      showToast("Cart cleared");
+      showUndoToast("Cart cleared", () => {
+        saveCart(prev);
+        renderCartPage();
+        updateCartBadge();
+      });
     });
 
   const checkoutBtn = document.getElementById("checkoutBtn");
@@ -409,6 +450,34 @@ function showToast(msg, timeout = 1400) {
     document.body.appendChild(toast);
   }
   toast.textContent = msg;
+  toast.classList.add("show");
+  clearTimeout(toast._t);
+  toast._t = setTimeout(() => toast.classList.remove("show"), timeout);
+}
+
+// show toast with Undo action
+function showUndoToast(msg, undoCallback, timeout = 5000) {
+  let toast = document.querySelector(".site-toast");
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.className = "site-toast";
+    document.body.appendChild(toast);
+  }
+  toast.innerHTML = "";
+  const span = document.createElement("span");
+  span.textContent = msg;
+  const btn = document.createElement("button");
+  btn.className = "undo-btn";
+  btn.textContent = "Undo";
+  btn.addEventListener("click", () => {
+    try {
+      undoCallback && undoCallback();
+    } catch (e) {}
+    toast.classList.remove("show");
+    clearTimeout(toast._t);
+  });
+  toast.appendChild(span);
+  toast.appendChild(btn);
   toast.classList.add("show");
   clearTimeout(toast._t);
   toast._t = setTimeout(() => toast.classList.remove("show"), timeout);
@@ -641,21 +710,6 @@ document.addEventListener("DOMContentLoaded", () => {
           )}</strong>.</p>`;
           setTimeout(() => hide(), 900);
         });
-      }
-
-      function escapeHtml(str) {
-        return String(str).replace(
-          /[&<>"'`]/g,
-          (s) =>
-            ({
-              "&": "&amp;",
-              "<": "&lt;",
-              ">": "&gt;",
-              '"': "&quot;",
-              "'": "&#39;",
-              "`": "&#96;",
-            }[s])
-        );
       }
 
       function showUserModal() {

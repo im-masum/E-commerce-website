@@ -102,6 +102,47 @@
     align-items: center;
 }
 
+.cart-summary .totals {
+    text-align: right;
+    min-width: 220px;
+}
+
+.cart-summary .totals .subtotal, .cart-summary .totals .shipping, .cart-summary .totals .grand {
+    display: block;
+}
+
+.cart-summary .totals .grand {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: .5rem;
+}
+
+.cart-summary .actions {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+.continue-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: .5rem .8rem;
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+/* Undo toast style (augments .site-toast) */
+.site-toast .undo-btn {
+    margin-left: .6rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: var(--accent-color);
+    padding: .2rem .5rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
 .cart-empty {
     text-align: center;
     padding: 2rem;
