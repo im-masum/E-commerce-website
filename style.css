@@ -1121,7 +1121,7 @@ footer {
 
 .categories .category-container {
     width: 100%;
-    padding: .5rem;
+    padding: min(0.5rem 8%);
 }
 
 .contact-page {
@@ -1143,8 +1143,6 @@ footer {
     border-bottom: 3px solid;
     border-radius: 8px;
 }
-
-
 
 .deals {
     width: 100%;
