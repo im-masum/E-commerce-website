@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart — ShopHub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>ShopHub</h1>
+                </a>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-container">
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="products.html">Products</a>
+                    <a href="categories.html">Categories</a>
+                    <a href="deals.html">Deals</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="about.html">About</a>
+                </div>
+                <div class="nav-icons">
+                    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme"><i
+                            class="fas fa-moon"></i></button>
+                    <input type="text" placeholder="search">
+                    <a href="cart.html" class="icon-cart"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="#" class="icon-user"><i class="fas fa-user"></i></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="cart-page" id="cartPage">
+        <h2>Your cart</h2>
+        <div id="cartList" class="cart-list">Loading…</div>
+        <div id="cartSummary" class="cart-summary" aria-live="polite"></div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
