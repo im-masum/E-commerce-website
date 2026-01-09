@@ -12,6 +12,39 @@
   } catch (e) {
     // ignore
   }
+
+  // Enhance CTA appearance: inject icon and ripple effect
+  try {
+    const ctaEnh = document.getElementById("ctaBtn");
+    if (ctaEnh) {
+      if (!ctaEnh.querySelector(".cta-icon")) {
+        const i = document.createElement("i");
+        i.className = "fas fa-bag-shopping cta-icon";
+        i.setAttribute("aria-hidden", "true");
+        ctaEnh.insertBefore(i, ctaEnh.firstChild);
+      }
+      ctaEnh.style.position = ctaEnh.style.position || "relative";
+      ctaEnh.addEventListener("click", function (e) {
+        try {
+          const rect = ctaEnh.getBoundingClientRect();
+          const ripple = document.createElement("span");
+          ripple.className = "ripple";
+          const size = Math.max(rect.width, rect.height);
+          ripple.style.width = ripple.style.height = size + "px";
+          const x = e.clientX - rect.left - size / 2;
+          const y = e.clientY - rect.top - size / 2;
+          ripple.style.left = x + "px";
+          ripple.style.top = y + "px";
+          ctaEnh.appendChild(ripple);
+          setTimeout(() => ripple.remove(), 650);
+        } catch (err) {
+          /* ignore */
+        }
+      });
+    }
+  } catch (e) {
+    /* ignore */
+  }
 })();
 
 let ctaBtn = document.getElementById("ctaBtn");
@@ -33,6 +66,7 @@ const products = [
       "https://images.unsplash.com/photo-1609255386725-b9b6a8ad829c?q=80&w=1902&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     category: "Electronics",
   },
+
   {
     id: 3,
     name: "Headphone",
@@ -589,6 +623,43 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(document.body, { childList: true, subtree: true });
   } catch (e) {
     // silent
+  }
+
+  // ---- Improve Shop Now CTA behavior ----
+  try {
+    const cta = document.getElementById("ctaBtn");
+    const featured =
+      document.getElementById("featuredProducts") ||
+      document.querySelector(".featured-products");
+    if (cta) {
+      // accessibility
+      if (!cta.hasAttribute("aria-label"))
+        cta.setAttribute("aria-label", "Shop now - jump to featured products");
+      if (!cta.hasAttribute("aria-controls") && featured && featured.id)
+        cta.setAttribute("aria-controls", featured.id || "featuredProducts");
+
+      // gentle pulse on load to draw attention (one-shot)
+      cta.classList.add("pulse");
+      setTimeout(() => cta.classList.remove("pulse"), 1100);
+
+      cta.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target =
+          document.getElementById("featuredProducts") ||
+          document.querySelector(".featured-products");
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+          // briefly highlight target to show user where they landed
+          target.classList.add("highlight-target");
+          setTimeout(() => target.classList.remove("highlight-target"), 1100);
+        } else {
+          // fallback: navigate to products page
+          window.location.href = "products.html";
+        }
+      });
+    }
+  } catch (e) {
+    // ignore
   }
 
   // Add smooth scroll behavior to navigation links
