@@ -253,12 +253,22 @@ function renderCartPage() {
         <img src="${item.image || ""}" alt="${escapeHtml(item.name)}">
         <div class="meta">
           <h4>${escapeHtml(item.name)}</h4>
-          <div class="muted">Unit: $${Number(item.price).toFixed(2)}</div>
+          <div class="unit-price muted">Unit: $${Number(item.price).toFixed(
+            2
+          )}</div>
         </div>
         <div class="controls">
-          <label>Qty <input type="number" min="1" value="${
-            item.qty || 1
-          }" data-id="${item.id}" class="cart-qty"></label>
+          <div class="qty-controls">
+            <button class="qty-btn qty-decrease" data-id="${
+              item.id
+            }" aria-label="Decrease">−</button>
+            <input type="number" min="1" value="${item.qty || 1}" data-id="${
+      item.id
+    }" class="cart-qty">
+            <button class="qty-btn qty-increase" data-id="${
+              item.id
+            }" aria-label="Increase">+</button>
+          </div>
           <button class="remove-cart" data-id="${item.id}">Remove</button>
           <div class="muted">Subtotal: $<span class="item-sub">${(
             Number(item.price) * (item.qty || 1)
@@ -293,6 +303,35 @@ function renderCartPage() {
       const it = c.find((x) => String(x.id) === String(id));
       if (it) {
         it.qty = v;
+        saveCart(c);
+        renderCartPage();
+        updateCartBadge();
+      }
+    });
+  });
+
+  // increase / decrease buttons
+  cartListEl.querySelectorAll(".qty-increase").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      const id = e.currentTarget.dataset.id;
+      const c = getCart();
+      const it = c.find((x) => String(x.id) === String(id));
+      if (it) {
+        it.qty = (Number(it.qty) || 1) + 1;
+        saveCart(c);
+        renderCartPage();
+        updateCartBadge();
+      }
+    });
+  });
+
+  cartListEl.querySelectorAll(".qty-decrease").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      const id = e.currentTarget.dataset.id;
+      const c = getCart();
+      const it = c.find((x) => String(x.id) === String(id));
+      if (it) {
+        it.qty = Math.max(1, (Number(it.qty) || 1) - 1);
         saveCart(c);
         renderCartPage();
         updateCartBadge();
