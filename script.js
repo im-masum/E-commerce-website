@@ -312,6 +312,71 @@ function addToCart(productId) {
 document.addEventListener("DOMContentLoaded", () => {
   displayProducts();
 
+  // Activate static "Add to Cart" buttons across pages.
+  // For buttons that don't have an explicit product id, try to infer it from nearby title text
+  // or from matching the products array. This avoids having to edit every HTML file.
+  function bindStaticAddToCartButtons() {
+    document.querySelectorAll(".add-to-cart").forEach((btn) => {
+      // avoid double-binding
+      if (btn.dataset._bound === "1") return;
+      btn.dataset._bound = "1";
+
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        // try explicit id first
+        let pid =
+          btn.dataset.productId ||
+          btn.dataset.id ||
+          btn.getAttribute("data-product-id") ||
+          btn.getAttribute("data-id");
+        if (pid) {
+          addToCart(pid);
+          return;
+        }
+
+        // try to infer from closest product card title
+        const card =
+          btn.closest(".product-card") ||
+          btn.closest(".card") ||
+          btn.parentElement;
+        let nameEl = null;
+        if (card) nameEl = card.querySelector("h3, h4, .product-title, .title");
+        const name = nameEl ? nameEl.textContent.trim() : null;
+        if (name) {
+          const match =
+            products.find(
+              (p) => p.name && p.name.toLowerCase() === name.toLowerCase()
+            ) ||
+            products.find(
+              (p) => p.name && p.name.toLowerCase().includes(name.toLowerCase())
+            );
+          if (match) {
+            // cache for future clicks
+            btn.dataset.productId = match.id;
+            addToCart(match.id);
+            return;
+          }
+        }
+
+        // fallback: use first product in list (non-ideal but ensures button works)
+        if (products && products.length) addToCart(products[0].id);
+        else addToCart(null);
+      });
+    });
+  }
+
+  // run initial binding and also observe DOM mutations to bind buttons added later
+  try {
+    bindStaticAddToCartButtons();
+    // observe for future nodes (e.g., if pages dynamically insert product cards)
+    const observer = new MutationObserver((mutations) =>
+      bindStaticAddToCartButtons()
+    );
+    observer.observe(document.body, { childList: true, subtree: true });
+  } catch (e) {
+    // silent
+  }
+
   // Add smooth scroll behavior to navigation links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {

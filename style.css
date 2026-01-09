@@ -423,6 +423,32 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
     color: #f48727;
 }
 
+/* Active/shop-now pulse animation */
+.cta-button.pulse {
+    animation: cta-pulse 1s ease;
+}
+
+@keyframes cta-pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+
+    30% {
+        transform: scale(1.04);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+.cta-button:active {
+    transform: translateY(1px) scale(.995);
+}
+
 /* Featured Categories */
 .featured-categories {
     padding: 4rem 5%;
