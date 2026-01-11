@@ -1,19 +1,22 @@
 :root {
-    --primary-color: #085567;
+    --primary-color: #4fdaf9;
     --background-dark: #191818;
     --background-light: #1E1E1E;
-    --text-primary: #FFFFFF;
-    --text-secondary: #A0A0A0;
-    --accent-color: #9D4EDD;
+    /* Dark-mode friendly text colors (improved contrast) */
+    --text-primary: #F3F6F8;
+    /* slightly off-white for less glare */
+    --text-secondary: #BFC7CC;
+    /* lighter secondary for readable contrast */
+    --accent-color: #bb6cfc;
 }
 
 /* Light theme overrides (applies when .light-theme is set on <html> or <body>) */
 .light-theme {
-    --primary-color: #085567;
+    --primary-color: #0bd0fc;
     --background-dark: #ffffff;
     --background-light: #f4f6f8;
     --text-primary: #0f1720;
-    --text-secondary: #6b7280;
+    --text-secondary: #212223;
     --accent-color: #7c3aed;
 }
 
@@ -22,6 +25,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
 }
 
 body {
@@ -491,9 +495,11 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
 
 /* Footer improvements */
 .footer-top {
-    background: linear-gradient(180deg, rgba(8, 8, 12, 0.9), rgba(16, 16, 20, 0.95));
+    /* Use theme variables so footer adapts to dark/light */
+    background: var(--background-light);
     padding: 2.5rem 3%;
     border-top: 1px solid rgba(255, 255, 255, 0.03);
+    color: var(--text-primary);
 }
 
 .footer-content {
@@ -598,6 +604,22 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
     color: var(--text-primary);
     text-decoration: none;
     opacity: .9;
+}
+
+/* Theme-specific tweaks for footer visuals */
+.light-theme .footer-top {
+    background: var(--background-light);
+    color: var(--text-primary);
+    border-top: 1px solid rgba(16, 24, 32, 0.06);
+}
+
+.light-theme .payments img {
+    filter: none;
+}
+
+.light-theme .social-icons a {
+    background: rgba(0, 0, 0, 0.03);
+    color: var(--text-primary);
 }
 
 @media (max-width: 900px) {
