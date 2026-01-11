@@ -625,6 +625,21 @@ document.addEventListener("DOMContentLoaded", () => {
     // silent
   }
 
+  // Newsletter form submit handler (simple front-end feedback)
+  try {
+    const newsletterForm = document.getElementById("newsletterForm");
+    if (newsletterForm) {
+      newsletterForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const email = document.getElementById("newsletterEmail").value;
+        showToast("Thanks — we will send deals to " + email);
+        newsletterForm.reset();
+      });
+    }
+  } catch (e) {
+    /* ignore */
+  }
+
   // ---- Improve Shop Now CTA behavior ----
   try {
     const cta = document.getElementById("ctaBtn");

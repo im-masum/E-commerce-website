@@ -45,8 +45,12 @@
     <main>
         <section class="hero">
             <div class="hero-content">
-                <h1>Welcome to MyShop</h1>
-                <p>Discover Amazing Deals on Trending Products</p>
+                <h1 class="hero-title">Welcome to <span class="brand">ShopHub</span></h1>
+                <p class="lead">Curated picks, unbeatable prices — delivered fast. New deals added daily.</p>
+                <div class="hero-meta" aria-hidden="true">
+                    <span class="badge">Free shipping over $50</span>
+                    <span class="badge">30-day returns</span>
+                </div>
                 <button class="cta-button" id="ctaBtn">Shop Now</button>
             </div>
         </section>
@@ -520,30 +524,62 @@
     </main>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>About Us</h3>
-                <p>Your one-stop shop for all your needs.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Connect With Us</h3>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+        <div class="footer-top">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>About ShopHub</h3>
+                    <p>Your one-stop shop for curated tech, fashion and home essentials. Fast delivery and friendly
+                        returns.</p>
+                    <div class="payments" aria-hidden="true">
+                        <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" />
+                        <img src="https://img.icons8.com/color/48/000000/mastercard-logo.png" alt="Mastercard" />
+                        <img src="https://img.icons8.com/color/48/000000/paypal.png" alt="PayPal" />
+                    </div>
+                </div>
+
+                <div class="footer-section links">
+                    <h3>Shop</h3>
+                    <ul>
+                        <li><a href="products.html">All Products</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="deals.html">Deals</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section support">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Track Order</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section newsletter">
+                    <h3>Join our newsletter</h3>
+                    <p class="muted">Get the latest deals and offers directly in your inbox.</p>
+                    <form id="newsletterForm">
+                        <label for="newsletterEmail" class="sr-only">Email address</label>
+                        <div class="newsletter-row">
+                            <input id="newsletterEmail" type="email" placeholder="Enter your email" required>
+                            <button type="submit" class="cta-button small">Subscribe</button>
+                        </div>
+                    </form>
+                    <div class="social-icons" aria-label="Social links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
+
         <div class="footer-bottom">
-            <p>&copy; Masum Iqbal Chowdhury 2025. All rights reserved.</p>
+            <p>&copy; Masum Iqbal Chowdhury 2026. All rights reserved. &nbsp; &middot; &nbsp; <a href="#">Privacy</a>
+                &nbsp; &middot; &nbsp; <a href="#">Terms</a></p>
         </div>
     </footer>
     <script src="script.js"></script>
