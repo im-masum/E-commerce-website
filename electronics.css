@@ -1,2 +1,51 @@
-/* Page-specific styles for electronics.html */
+
+
+/* Top heading (page title above the product list) */
+h2[style], .deals+h2 {
+    /* keep any inline margin but ensure readable weight */
+    font-size: 1.6rem;
+    color: var(--text-primary);
+}
+
+/* Tweak featured-products spacing specifically for electronics */
+.featured-products {
+    padding: .6rem 0 1.2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Slightly larger product cards for electronics visuals */
+.product-card {
+    width: 320px;
+}
+
+.product-image {
+    height: 220px;
+}
+
+/* Ensure product-info text looks balanced on this page */
+.product-info h3 {
+    font-size: 1.02rem;
+}
+
+/* Offer grid used on deals/electronics pages — keep it centered */
+.offer-grid {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .product-card {
+        width: 100%;
+        max-width: 420px;
+    }
+
+    .product-image {
+        height: 200px;
+    }
+}
+
+/* Placeholder for a hero area if later added */
 .electronics-hero {}
