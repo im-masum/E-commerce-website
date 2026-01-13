@@ -1,2 +1,45 @@
 /* Page-specific styles for gaming.html */
-.gaming-hero {}
+
+/* Gaming page scoped tweaks: give the gaming section slightly punchier visuals */
+.gaming-hero {
+    padding: 1.5rem 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.02));
+}
+
+.featured-products {
+    padding: .6rem 0 1.2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Emphasize product cards for gaming offers */
+.product-card {
+    width: 340px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+.product-image {
+    height: 240px;
+}
+
+.product-info h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.price {
+    color: var(--primary-color);
+    font-weight: 800;
+}
+
+@media (max-width: 768px) {
+    .product-card {
+        width: 100%;
+        max-width: 460px;
+    }
+
+    .product-image {
+        height: 200px;
+    }
+}
