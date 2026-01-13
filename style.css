@@ -1442,26 +1442,7 @@ footer {
 
 /* Contact page styles moved to contact.css */
 
-.deals {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    margin: 10px auto;
-    background-color: var(--background-light);
-
-}
-
-.deals h2 {
-    color: #085567;
-    padding: .5rem;
-    border-bottom: 3px solid;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-}
+/* Deals page styles moved to deals.css */
 
 .products {
     width: 100%;
