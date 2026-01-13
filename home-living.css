@@ -1,4 +1,4 @@
-/* Page-specific styles for home-living.html */
+
 
 /* Page hero reserved area (small default) */
 .home-living-hero {
@@ -50,4 +50,8 @@
     }
 }
 
-.category-hero {}
+/* Placeholder for category hero hook */
+.category-hero {
+    /* minimal safe rule to avoid empty-ruleset linter warnings */
+    display: block;
+}

@@ -1,5 +1,3 @@
-
-
 /* Top heading (page title above the product list) */
 h2[style], .deals+h2 {
     /* keep any inline margin but ensure readable weight */
@@ -48,4 +46,7 @@ h2[style], .deals+h2 {
 }
 
 /* Placeholder for a hero area if later added */
-.electronics-hero {}
+.electronics-hero {
+    /* kept intentionally minimal to reserve a hook for future page-specific hero rules */
+    display: block;
+}
