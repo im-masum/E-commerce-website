@@ -1,2 +1,53 @@
 /* Page-specific styles for home-living.html */
+
+/* Page hero reserved area (small default) */
+.home-living-hero {
+    padding: 1.25rem 0;
+}
+
+/* Featured products spacing for home & living */
+.featured-products {
+    padding: .6rem 0 1.2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Slightly wider product cards for home-living visuals */
+.product-card {
+    width: 320px;
+    border-radius: 10px;
+}
+
+.product-image {
+    height: 220px;
+}
+
+.product-info h3 {
+    font-size: 1.02rem;
+}
+
+.price {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Offer grid used on deals/home-living pages */
+.offer-grid {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .product-card {
+        width: 100%;
+        max-width: 420px;
+    }
+
+    .product-image {
+        height: 200px;
+    }
+}
+
 .category-hero {}
