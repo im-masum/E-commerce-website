@@ -173,7 +173,6 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
 /* Navbar Styles */
 .navbar {
     display: flex;
-
     width: 100%;
     justify-content: space-between;
     align-items: center;
@@ -400,7 +399,6 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
 
 .nav-container {
     gap: 6rem;
-    /* reduce the huge gap, keep centered */
 }
 
 .nav-links a {
@@ -649,7 +647,7 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
 }
 
 .hero-content {
-    width: 100%;
+     width: 100%;
     padding: 2rem;
 }
 
@@ -891,16 +889,6 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
 
 .cta-button:active {
     transform: translateY(1px) scale(.995);
-}
-
-/* Featured Categories */
-.featured-categories {
-    padding: 4rem 5%;
-}
-
-.featured-categories h2 {
-    text-align: center;
-    margin-bottom: 3rem;
 }
 
 .category-container {
@@ -1359,30 +1347,7 @@ footer {
 
 
 
-.categories {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: .5rem;
-    background-color: rgb(22, 22, 22);
-    margin: 10px auto;
-
-}
-
-.categories h2 {
-    color: #085567;
-    padding: .5rem;
-    border-bottom: 3px solid;
-    margin-bottom: 1rem;
-    border-radius: 8px;
-}
-
-.categories .category-container {
-    width: 100%;
-    padding: min(0.5rem 8%);
-}
+/* Categories styles moved to categories.css */
 
 .contact-page {
     display: flex;

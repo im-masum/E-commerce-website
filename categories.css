@@ -1,2 +1,35 @@
 /* Page-specific styles for categories.html */
-.category-container {}
+
+.categories {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+    background-color: rgb(22, 22, 22);
+    margin: 10px auto;
+}
+
+.categories h2 {
+    color: #085567;
+    padding: .5rem;
+    border-bottom: 3px solid;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+.categories .category-container {
+    width: 100%;
+    padding: min(0.5rem, 8%);
+}
+
+/* Featured Categories */
+.featured-categories {
+    padding: 4rem 5%;
+}
+
+.featured-categories h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
