@@ -1,4 +1,4 @@
-/* Top heading (page title above the product list) */
+
 h2[style], .deals+h2 {
     /* keep any inline margin but ensure readable weight */
     font-size: 1.6rem;
