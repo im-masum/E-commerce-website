@@ -1,5 +1,4 @@
-/* Page-specific styles for category-item.html */
+
 .category-item {
-    /* placeholder to avoid empty ruleset lint warnings; safe no-op for most elements */
     display: block;
 }
