@@ -853,6 +853,50 @@ document.addEventListener("DOMContentLoaded", () => {
       applyTheme(currentlyLight ? "dark" : "light");
     });
   }
+
+  // Highlight the current page's navbar link by adding the `active` class
+  function activateCurrentNav() {
+    try {
+      const links = document.querySelectorAll(".nav-links a");
+      if (!links || !links.length) return;
+      const pathname = window.location.pathname || "/";
+      // derive the current filename (treat root as index.html)
+      const pathParts = pathname.replace(/^\/+/, "").split("/");
+      const currentFile = pathParts.pop() || "index.html" || "index.html";
+
+      links.forEach((a) => {
+        try {
+          const href = a.getAttribute("href") || "";
+          if (
+            !href ||
+            href.startsWith("#") ||
+            href.startsWith("mailto:") ||
+            href.startsWith("tel:")
+          )
+            return;
+          const resolved = new URL(href, window.location.href);
+          const linkFile =
+            resolved.pathname.replace(/^\//, "").split("/").pop() ||
+            "index.html";
+          if (linkFile === currentFile) {
+            a.classList.add("active");
+          } else {
+            a.classList.remove("active");
+          }
+        } catch (err) {
+          // ignore per-link errors
+        }
+      });
+    } catch (e) {
+      /* ignore */
+    }
+  }
+
+  // Run once on load and also when history changes (in case SPA-like navigation is added later)
+  try {
+    activateCurrentNav();
+    window.addEventListener("popstate", activateCurrentNav);
+  } catch (e) {}
 });
 
 // // Add scroll event listener for navbar
