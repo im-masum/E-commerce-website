@@ -195,7 +195,6 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
     color: grey;
 }
 
-/* Mobile menu button - open state */
 .mobile-menu-btn.open {
     color: var(--accent-color);
     transform: translateY(-2px);
@@ -230,7 +229,6 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
     color: var(--primary-color);
 }
 
-/* Active link styles for desktop and mobile navs */
 .nav-links a.active,
 .nav-container a.active {
     color: var(--accent-color);
@@ -497,8 +495,6 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
     padding: 3px 6px;
 }
 
-/* ===== end header improvements ===== */
-
 /* Footer improvements */
 .footer-top {
     /* Use theme variables so footer adapts to dark/light */
@@ -670,6 +666,8 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
     margin-bottom: .6rem;
     font-weight: 800;
     letter-spacing: -0.4px;
+    color: var(--accent-color);
+
 }
 
 .hero-title .brand {
