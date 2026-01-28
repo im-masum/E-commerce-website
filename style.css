@@ -658,6 +658,19 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
     text-align: center;
     max-width: 960px;
     margin: 0 auto;
+    animation: heroFadeUp 700ms ease both;
+}
+
+@keyframes heroFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hero-title {
@@ -702,22 +715,6 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
     border: 1px solid rgba(255, 255, 255, 0.03);
 }
 
-/* subtle entrance animation */
-.hero-content {
-    animation: heroFadeUp 700ms ease both;
-}
-
-@keyframes heroFadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(8px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 @media (max-width: 900px) {
     .hero-title {
