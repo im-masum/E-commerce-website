@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #2d3031;
+    --primary-color: #2888f6;
     --background-dark: #191818;
     --background-light: #1E1E1E;
     --text-primary: #F3F6F8;
@@ -175,9 +175,10 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
 .navbar {
     display: flex;
     width: 100%;
+    max-width: 100%;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2%;
+    padding: min(.5rem, 4%);
     background-color: var(--background-light);
     position: sticky;
     top: 0;
@@ -220,8 +221,8 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
 
 .nav-links a {
     color: var(--text-primary);
-    text-decoration: none;
     font-weight: 500;
+    font-size: 1.2rem;
     transition: color 0.3s ease;
 }
 
@@ -300,11 +301,6 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
     text-transform: uppercase;
 }
 
-.nav-icons a {
-    color: var(--text-primary);
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
-}
 
 .nav-icons a:hover {
     color: var(--primary-color);
