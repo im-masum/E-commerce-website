@@ -179,22 +179,21 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
     justify-content: space-between;
     align-items: center;
     padding: min(.5rem, 4%);
-    background-color: var(--background-light);
+    /* background-color: var(--background-light); */
     position: sticky;
     top: 0;
     z-index: 1000;
-    /* background: linear-gradient(90deg, rgba(13, 37, 63, 0.88), rgba(28, 30, 45, 0.88)); */
+    background: linear-gradient(90deg, rgba(13, 37, 63, 0.88), rgba(34, 36, 58, 0.88));
     border-bottom: 1px solid rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(6px);
     padding: 1rem 3%;
 }
 
-
 .nav-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20rem;
+    gap: 10rem;
 }
 
 .logo h1 {
