@@ -183,21 +183,28 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
     max-width: 100%;
     justify-content: space-between;
     align-items: center;
-    padding: min(.8rem, 6%);
+    padding: min(.6rem, 6%);
     position: sticky;
     top: 0;
     z-index: 1000;
+    margin: 0 auto;
     background: linear-gradient(90deg, rgba(13, 37, 63, 0.88), rgba(34, 36, 58, 0.88));
     border-bottom: 1px solid rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(6px);
+    
+
 }
 
 .nav-container {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
-    gap: 15rem;
-
+    justify-content: space-between;
+    width: 70%;
+    max-width: 70%;
+    padding: min(.6rem, 6%);
+    background-color: #2888f6;
+    margin: 0 auto;
 }
 
 .logo h1 {
