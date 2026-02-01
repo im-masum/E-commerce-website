@@ -203,8 +203,6 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
     width: 70%;
     max-width: 70%;
     padding: min(.6rem, 6%);
-    background-color: #2888f6;
-    margin: 0 auto;
 }
 
 .logo h1 {
