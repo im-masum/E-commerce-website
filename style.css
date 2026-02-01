@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #2888f6;
+    --primary-color: #07e1f0;
     --background-dark: #191818;
     --background-light: #1E1E1E;
     --text-primary: #F3F6F8;
@@ -8,7 +8,7 @@
 }
 
 .light-theme {
-    --primary-color: #11a4c9;
+    --primary-color: #fc8ce4;
     --background-dark: #ffffff;
     --background-light: #f4f6f8;
     --text-primary: #0c0c0c;
