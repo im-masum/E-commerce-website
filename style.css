@@ -3,7 +3,7 @@
     --background-dark: #191818;
     --background-light: #1E1E1E;
     --text-primary: #F3F6F8;
-    --text-secondary: #FFFFFF ;
+    --text-secondary: #FFFFFF;
     --accent-color: #bb6cfc;
 }
 
@@ -30,6 +30,7 @@
 body {
     width: 100%;
     max-width: 100%;
+    padding: 10px;
     background-color: var(--background-dark);
     color: var(--text-primary);
 }
@@ -298,13 +299,13 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
 
 .cart-count {
     position: absolute;
-    top: -6px;
-    right: -6px;
+    top: -8px;
+    right: -8px;
     background: var(--accent-color);
     color: white;
     padding: 2px 6px;
     border-radius: 999px;
-    font-size: .7rem;
+    font-size: .8rem;
     font-weight: 600;
     line-height: 1;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
@@ -428,9 +429,6 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
         font-size: 16px;
     }
 }
-
-/* ===== Header visual improvements (glass + gradient + icon polish) ===== */
-
 
 
 /* Mobile tweaks: make icons slightly larger and nav spacing comfortable */
