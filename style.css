@@ -700,12 +700,6 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
     margin-bottom: 1rem;
 }
 
-.hero-content p {
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    margin-bottom: 2rem;
-}
-
 .cta-button {
     padding: .4rem 1rem;
     font-size: 1rem;
