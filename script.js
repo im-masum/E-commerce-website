@@ -454,27 +454,60 @@ function saveCart(cart) {
   } catch (e) {}
 }
 
+// keep track of last total so we can animate changes
+let _lastCartTotal = 0;
+
 function findProductById(id) {
   return products.find((p) => Number(p.id) === Number(id));
 }
 
 function updateCartBadge() {
-  // ensure badge exists next to cart icon
-  const cartIconAnchor = Array.from(
-    document.querySelectorAll(".nav-icons a")
-  ).find((a) => a.querySelector(".fa-shopping-cart"));
-  if (!cartIconAnchor) return;
-  let badge = cartIconAnchor.querySelector(".cart-count");
-  const cart = getCart();
-  const total = cart.reduce((s, it) => s + (it.qty || 1), 0);
-  if (!badge) {
-    badge = document.createElement("span");
-    badge.className = "cart-count";
-    cartIconAnchor.appendChild(badge);
+  // Update all cart icons on the page (header, mobile, footer, etc.)
+  try {
+    const anchors = Array.from(document.querySelectorAll("a")).filter((a) =>
+      Boolean(a.querySelector(".fa-shopping-cart"))
+    );
+    if (!anchors.length) return;
+
+    const cart = getCart();
+    const total = cart.reduce((s, it) => s + (it.qty || 1), 0);
+
+    anchors.forEach((cartIconAnchor) => {
+      let badge = cartIconAnchor.querySelector(".cart-count");
+      if (!badge) {
+        badge = document.createElement("span");
+        badge.className = "cart-count";
+        // announce updates to assistive tech
+        badge.setAttribute("aria-live", "polite");
+        badge.setAttribute("role", "status");
+        cartIconAnchor.appendChild(badge);
+      }
+
+      const displayText = total > 99 ? "99+" : String(total);
+
+      // bump animation on count change (only when count > 0)
+      if (total !== _lastCartTotal && total > 0) {
+        badge.classList.add("bump");
+        setTimeout(() => badge.classList.remove("bump"), 350);
+      }
+
+      badge.textContent = displayText;
+      badge.style.display = total > 0 ? "inline-block" : "none";
+      badge.setAttribute("aria-hidden", total > 0 ? "false" : "true");
+    });
+
+    _lastCartTotal = total;
+  } catch (e) {
+    // fail silently — badge is a UI nicety
   }
-  badge.textContent = total;
-  badge.style.display = total > 0 ? "inline-block" : "none";
 }
+
+// Keep badges in sync if another tab/window updates localStorage
+window.addEventListener("storage", (e) => {
+  try {
+    if (e.key === "shop_cart") updateCartBadge();
+  } catch (err) {}
+});
 
 function showToast(msg, timeout = 1400) {
   let toast = document.querySelector(".site-toast");
