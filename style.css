@@ -657,7 +657,7 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
 
 .lead {
     font-size: 1.05rem;
-    color: var(--text-secondary);
+    color: var(--primary-color);
     margin-bottom: 1rem;
     max-width: 720px;
     margin-left: auto;
