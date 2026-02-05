@@ -246,9 +246,7 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
     box-shadow: inset 0 -3px 0 var(--accent-color);
 }
 
- .nav-links a.active {
-    color: var(--accent-color);
-    box-shadow: inset 0 -3px 0 var(--accent-color);}
+
 
 .nav-icons a, .nav-icons button.theme-toggle {
     display: inline-flex;
