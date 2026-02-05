@@ -246,7 +246,10 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
     box-shadow: inset 0 -3px 0 var(--accent-color);
 }
 
-
+.nav-links a.active {
+    color: var(--accent-color);
+    box-shadow: inset 0 -3px 0 var(--accent-color);
+}
 
 .nav-icons a, .nav-icons button.theme-toggle {
     display: inline-flex;
@@ -319,6 +322,7 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
     animation: cart-bump 320ms cubic-bezier(.2, .8, .2, 1);
     transform-origin: center;
 }
+
 @keyframes cart-bump {
     0% {
         transform: scale(1);
@@ -332,6 +336,7 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
         transform: scale(1);
     }
 }
+
 /* small toast */
 .site-toast {
     position: fixed;
@@ -445,7 +450,7 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
         font-size: 16px;
         letter-spacing: 0;
     }
-    
+
     .nav-icons i {
         font-size: 16px;
     }
