@@ -457,6 +457,15 @@ function saveCart(cart) {
 // keep track of last total so we can animate changes
 let _lastCartTotal = 0;
 
+// small debounce utility (used to reduce rapid event firing)
+function debounce(fn, wait = 120) {
+  let t;
+  return function (...args) {
+    clearTimeout(t);
+    t = setTimeout(() => fn.apply(this, args), wait);
+  };
+}
+
 function findProductById(id) {
   return products.find((p) => Number(p.id) === Number(id));
 }
@@ -646,14 +655,57 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // run initial binding and also observe DOM mutations to bind buttons added later
+  // Use event delegation for Add to Cart buttons to avoid per-node bindings and observers.
+  // This handles static and dynamically-inserted buttons without extra MutationObservers.
   try {
-    bindStaticAddToCartButtons();
-    // observe for future nodes (e.g., if pages dynamically insert product cards)
-    const observer = new MutationObserver((mutations) =>
-      bindStaticAddToCartButtons()
-    );
-    observer.observe(document.body, { childList: true, subtree: true });
+    function handleAddToCartClick(e) {
+      const btn = e.target.closest(".add-to-cart");
+      if (!btn) return;
+      e.preventDefault();
+
+      // try explicit id first
+      let pid =
+        btn.dataset.productId ||
+        btn.dataset.id ||
+        btn.getAttribute("data-product-id") ||
+        btn.getAttribute("data-id");
+      if (pid) {
+        addToCart(pid);
+        return;
+      }
+
+      // try to infer from closest product card title
+      const card =
+        btn.closest(".product-card") ||
+        btn.closest(".card") ||
+        btn.parentElement;
+      let nameEl = null;
+      if (card) nameEl = card.querySelector("h3, h4, .product-title, .title");
+      const name = nameEl ? nameEl.textContent.trim() : null;
+      if (name) {
+        const match =
+          products.find(
+            (p) => p.name && p.name.toLowerCase() === name.toLowerCase()
+          ) ||
+          products.find(
+            (p) => p.name && p.name.toLowerCase().includes(name.toLowerCase())
+          );
+        if (match) {
+          // cache for future clicks
+          try {
+            btn.dataset.productId = match.id;
+          } catch (e) {}
+          addToCart(match.id);
+          return;
+        }
+      }
+
+      // fallback
+      if (products && products.length) addToCart(products[0].id);
+      else addToCart(null);
+    }
+
+    document.body.addEventListener("click", handleAddToCartClick);
   } catch (e) {
     // silent
   }
@@ -955,11 +1007,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // // Add scroll event listener for navbar
-window.addEventListener("scroll", () => {
-  const navbar = document.querySelector(".navbar");
-  if (window.scrollY > 50) {
-    navbar.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.3)";
-  } else {
-    navbar.style.boxShadow = "none";
-  }
-});
+// Debounced scroll handler for navbar shadow to improve perf
+window.addEventListener(
+  "scroll",
+  debounce(() => {
+    const navbar = document.querySelector(".navbar");
+    if (!navbar) return;
+    if (window.scrollY > 50)
+      navbar.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.3)";
+    else navbar.style.boxShadow = "none";
+  }, 50)
+);
