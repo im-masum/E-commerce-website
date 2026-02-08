@@ -474,127 +474,7 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
 }
 
 
-/* Footer improvements */
-.footer-top {
-    background: var(--background-light);
-    padding: 2.5rem 3%;
-    color: var(--text-primary);
-    box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
-}
 
-.footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.4rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    align-items: start;
-}
-
-.footer-section h3 {
-    margin-bottom: .6rem;
-    font-size: 1.05rem;
-}
-
-.footer-section p, .footer-section ul, .footer-section .muted {
-    color: var(--text-secondary);
-    font-size: .95rem;
-}
-
-.footer-section ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-section ul li {
-    margin-bottom: .45rem;
-}
-
-.footer-section ul li a {
-    color: var(--text-primary);
-    text-decoration: none;
-    opacity: .9;
-}
-
-.footer-section ul li a:hover {
-    color: var(--primary-color);
-    text-decoration: underline;
-}
-
-.payments {
-    display: flex;
-    align-items: center;
-    margin-top: 1rem;
-    gap: 1rem;
-}
-.payments img {
-    width: 44px;
-    margin-right: .6rem;
-    filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.4));
-}
-.payments img:hover {
-    transform: translateY(-2px);
-}
-
-
-.newsletter-row {
-    display: flex;
-    gap: .5rem;
-    margin-top: .5rem;
-}
-
-.newsletter-row input {
-    flex: 1;
-    padding: .6rem .8rem;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    background: rgba(255, 255, 255, 0.02);
-    color: var(--text-primary);
-}
-
-.cta-button.small {
-    padding: .45rem .75rem;
-    font-size: .9rem;
-    border-radius: 8px;
-}
-
-.social-icons {
-    display: flex;
-    gap: .5rem;
-    margin-top: .8rem;
-}
-
-.social-icons a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.02);
-    color: var(--text-primary);
-    text-decoration: none;
-}
-
-.social-icons a:hover {
-    transform: translateY(-4px);
-    color: var(--accent-color);
-}
-
-.footer-bottom {
-    padding: .9rem 3%;
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.02);
-    color: var(--text-secondary);
-    background: transparent;
-}
-
-.footer-bottom a {
-    color: var(--text-primary);
-    text-decoration: none;
-    opacity: .9;
-}
 
 /* Theme-specific tweaks for footer visuals */
 .light-theme .footer-top {
@@ -947,7 +827,7 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
 /* Featured Products Section */
 .featured-products {
     padding: .5rem;
-    border: 0.5px solid rgb(39, 38, 38);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     margin: 10px auto;
 
@@ -973,7 +853,7 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
     overflow: hidden;
     width: 300px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: .5px solid rgb(47, 45, 45);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .product-card:hover {
