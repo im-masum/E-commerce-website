@@ -483,8 +483,8 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
 }
 
 .footer-content {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+    display: flex;
+    flex-wrap: wrap;
     gap: 1.4rem;
     max-width: 1200px;
     margin: 0 auto;
