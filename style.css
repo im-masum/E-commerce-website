@@ -528,12 +528,15 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
     margin-top: 1rem;
     gap: 1rem;
 }
-
 .payments img {
     width: 44px;
     margin-right: .6rem;
     filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.4));
 }
+.payments img:hover {
+    transform: translateY(-2px);
+}
+
 
 .newsletter-row {
     display: flex;
