@@ -476,7 +476,6 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
 
 /* Footer improvements */
 .footer-top {
-    /* Use theme variables so footer adapts to dark/light */
     background: var(--background-light);
     padding: 2.5rem 3%;
     border-top: 1px solid rgba(255, 255, 255, 0.03);
