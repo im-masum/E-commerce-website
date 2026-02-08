@@ -942,10 +942,10 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
     display: flex;
     flex-direction: column;
     width: 100%;
-    border: 0.5px solid rgb(39, 38, 38);
     padding: 1rem;
     background-color: var(--background-light);
     border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
 }
 
