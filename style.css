@@ -478,7 +478,6 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
 .footer-top {
     background: var(--background-light);
     padding: 2.5rem 3%;
-    /* border-top: 1px solid rgba(255, 255, 255, 0.03); */
     color: var(--text-primary);
     box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
 }
@@ -521,6 +520,13 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
 .footer-section ul li a:hover {
     color: var(--primary-color);
     text-decoration: underline;
+}
+
+.payments {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    gap: 1rem;
 }
 
 .payments img {
