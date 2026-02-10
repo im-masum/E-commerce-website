@@ -356,23 +356,6 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
     color: var(--text-primary);
 }
 
-@media (max-width: 900px) {
-    .footer-content {
-        grid-template-columns: 1fr;
-    }
-
-    .payments img {
-        width: 36px;
-    }
-
-    .newsletter-row {
-        flex-direction: column;
-    }
-
-    .nav-container {
-        gap: 2.2rem;
-    }
-}
 
 .hero {
     height: 50vh;
@@ -623,7 +606,7 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
     width: 100%;
     padding: 1rem 5%;
     background-color: var(--background-light);
-    border: 0.5px solid rgb(39, 38, 38);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin: 10px auto;
     border-radius: 10px;
 
@@ -1096,6 +1079,23 @@ footer {
     color: var(--text-secondary);
 }
 
+@media (max-width: 900px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .payments img {
+        width: 36px;
+    }
+
+    .newsletter-row {
+        flex-direction: column;
+    }
+
+    .nav-container {
+        gap: 2.2rem;
+    }
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
