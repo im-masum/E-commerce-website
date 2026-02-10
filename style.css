@@ -688,10 +688,10 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
 .product-grid {
     display: flex;
     width: 100%;
-    gap: .5rem;
+    gap: 1rem;
     flex-wrap: wrap;
     justify-content: center;
-    padding: .5rem;
+    padding: min(1rem, 8%);
 }
 
 .product-card {
