@@ -895,13 +895,14 @@ body, .navbar, .product-card, .contact-form, .contact-info, .about-hero, .about-
     box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
 }
 
+
 .footer-content {
     display: flex;
+    padding: 1rem;
+    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 1.4rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    align-items: start;
+    gap: 2rem;
+    margin-bottom: 2rem;
 }
 
 .footer-section h3 {
@@ -1017,14 +1018,6 @@ footer {
     padding: 1rem 0.2rem;
 }
 
-.footer-content {
-    display: flex;
-    padding: 1rem;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
 
 .footer-section {
     flex: 1;
