@@ -999,6 +999,45 @@ footer {
     color: var(--accent-color);
 }
 
+/* Brand-specific colors for social icons (use aria-label on anchors) */
+.social-icons a[aria-label="Facebook"] {
+    background: #1877F2;
+    color: #ffffff;
+    border-radius: 999px;
+}
+
+.social-icons a[aria-label="Twitter"] {
+    background: #1DA1F2;
+    color: #ffffff;
+    border-radius: 999px;
+}
+
+.social-icons a[aria-label="Instagram"] {
+    background: linear-gradient(45deg, #f58529 0%, #dd2a7b 40%, #8134af 70%, #515bd4 100%);
+    color: #ffffff;
+    border-radius: 999px;
+}
+
+.social-icons a[aria-label="YouTube"] {
+    background: #FF0000;
+    color: #ffffff;
+    border-radius: 999px;
+}
+
+/* Hover/focus adjustments for brand icons */
+.social-icons a[aria-label="Facebook"]:hover,
+.social-icons a[aria-label="Twitter"]:hover,
+.social-icons a[aria-label="Instagram"]:hover,
+.social-icons a[aria-label="YouTube"]:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);
+}
+
+.social-icons a:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(9, 122, 141, 0.12);
+}
+
 .footer-bottom {
     padding: .9rem 3%;
     text-align: center;
