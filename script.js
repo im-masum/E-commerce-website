@@ -274,7 +274,7 @@ function escapeHtml(str) {
         '"': "&quot;",
         "'": "&#39;",
         "`": "&#96;",
-      }[s])
+      })[s],
   );
 }
 
@@ -304,7 +304,7 @@ function renderCartPage() {
         <div class="meta">
           <h4>${escapeHtml(item.name)}</h4>
           <div class="unit-price muted">Unit: $${Number(item.price).toFixed(
-            2
+            2,
           )}</div>
         </div>
         <div class="controls">
@@ -313,8 +313,8 @@ function renderCartPage() {
               item.id
             }" aria-label="Decrease">−</button>
             <input type="number" min="1" value="${item.qty || 1}" data-id="${
-      item.id
-    }" class="cart-qty">
+              item.id
+            }" class="cart-qty">
             <button class="qty-btn qty-increase" data-id="${
               item.id
             }" aria-label="Increase">+</button>
@@ -331,7 +331,7 @@ function renderCartPage() {
   function computeTotal() {
     return cart.reduce(
       (s, i) => s + (Number(i.price) || 0) * (Number(i.qty) || 1),
-      0
+      0,
     );
   }
 
@@ -474,7 +474,7 @@ function updateCartBadge() {
   // Update all cart icons on the page (header, mobile, footer, etc.)
   try {
     const anchors = Array.from(document.querySelectorAll("a")).filter((a) =>
-      Boolean(a.querySelector(".fa-shopping-cart"))
+      Boolean(a.querySelector(".fa-shopping-cart")),
     );
     if (!anchors.length) return;
 
@@ -635,10 +635,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (name) {
           const match =
             products.find(
-              (p) => p.name && p.name.toLowerCase() === name.toLowerCase()
+              (p) => p.name && p.name.toLowerCase() === name.toLowerCase(),
             ) ||
             products.find(
-              (p) => p.name && p.name.toLowerCase().includes(name.toLowerCase())
+              (p) =>
+                p.name && p.name.toLowerCase().includes(name.toLowerCase()),
             );
           if (match) {
             // cache for future clicks
@@ -685,10 +686,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (name) {
         const match =
           products.find(
-            (p) => p.name && p.name.toLowerCase() === name.toLowerCase()
+            (p) => p.name && p.name.toLowerCase() === name.toLowerCase(),
           ) ||
           products.find(
-            (p) => p.name && p.name.toLowerCase().includes(name.toLowerCase())
+            (p) => p.name && p.name.toLowerCase().includes(name.toLowerCase()),
           );
         if (match) {
           // cache for future clicks
@@ -894,11 +895,10 @@ document.addEventListener("DOMContentLoaded", () => {
           e.preventDefault();
           const email = overlay.querySelector("#userEmail").value;
           // Simple confirmation (no backend)
-          overlay.querySelector(
-            ".modal-body"
-          ).innerHTML = `<p class="muted">Signed in as <strong>${escapeHtml(
-            email
-          )}</strong>.</p>`;
+          overlay.querySelector(".modal-body").innerHTML =
+            `<p class="muted">Signed in as <strong>${escapeHtml(
+              email,
+            )}</strong>.</p>`;
           setTimeout(() => hide(), 900);
         });
       }
@@ -1016,5 +1016,60 @@ window.addEventListener(
     if (window.scrollY > 50)
       navbar.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.3)";
     else navbar.style.boxShadow = "none";
-  }, 50)
+  }, 50),
 );
+
+// Back-to-top button: create once and show/hide on scroll
+(function () {
+  try {
+    const SCROLL_SHOW_PX = 240;
+
+    function createBtn() {
+      if (document.querySelector(".back-to-top"))
+        return document.querySelector(".back-to-top");
+      const btn = document.createElement("button");
+      btn.className = "back-to-top";
+      btn.setAttribute("aria-label", "Back to top");
+      btn.setAttribute("title", "Back to top");
+      btn.type = "button";
+      btn.innerHTML =
+        '<i class="fas fa-chevron-up chev" aria-hidden="true"></i>';
+      // click -> smooth scroll to top
+      btn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        // return focus to top-most meaningful element after scroll finishes (best-effort)
+        setTimeout(() => {
+          const firstLink = document.querySelector(".nav-links a, .logo h1");
+          if (firstLink && typeof firstLink.focus === "function")
+            firstLink.focus();
+        }, 700);
+      });
+      // keyboard activation (Enter / Space)
+      btn.addEventListener("keydown", (ev) => {
+        if (ev.key === "Enter" || ev.key === " ") {
+          ev.preventDefault();
+          btn.click();
+        }
+      });
+      document.body.appendChild(btn);
+      return btn;
+    }
+
+    const btn = createBtn();
+
+    function syncVisibility() {
+      try {
+        if (window.scrollY > SCROLL_SHOW_PX) btn.classList.add("show");
+        else btn.classList.remove("show");
+      } catch (e) {}
+    }
+
+    // initial sync and debounced scroll
+    syncVisibility();
+    window.addEventListener("scroll", debounce(syncVisibility, 80));
+    // also show when focusing deep content via hash navigation
+    window.addEventListener("hashchange", debounce(syncVisibility, 80));
+  } catch (e) {
+    // silent
+  }
+})();
