@@ -910,10 +910,6 @@ footer {
     margin-bottom: 2rem;
 } 
 
-.footer-section h3 {
-    margin-bottom: .6rem;
-    font-size: 1.05rem;
-}
 
 .footer-section p, .footer-section ul, .footer-section .muted {
     color: var(--text-secondary);
