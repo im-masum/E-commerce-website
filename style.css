@@ -1087,14 +1087,14 @@ footer {
     }
 }
 
-
 .footer-bottom {
-    padding: .9rem 3%;
     text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.02);
+    width: 100%;
+    padding-top: 2rem;
+    border-top: .5px solid rgb(60, 55, 55);
     color: var(--text-secondary);
-    background: transparent;
 }
+
 
 .footer-bottom a {
     color: var(--text-primary);
@@ -1149,13 +1149,6 @@ footer {
     transform: scale(1.2);
 }
 
-.footer-bottom {
-    text-align: center;
-    width: 100%;
-    padding-top: 2rem;
-    border-top: .5px solid rgb(60, 55, 55);
-    color: var(--text-secondary);
-}
 
 @media (max-width: 900px) {
     .footer-content {
