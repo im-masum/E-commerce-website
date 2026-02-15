@@ -987,8 +987,9 @@ footer {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
+    margin-right: .5rem;
     border-radius: 999px;
     color: var(--text-primary);
     text-decoration: none;
@@ -996,6 +997,7 @@ footer {
     overflow: visible;
     background: transparent;
     /* glass and color are provided by pseudo-elements */
+    transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
 }
 
 /* gentle hover lift for all */
@@ -1051,55 +1053,40 @@ footer {
     background: #FF0000;
 }
 
+/* Extra providers: LinkedIn & Pinterest */
+.social-icons a[aria-label="LinkedIn"]::after {
+    background: #0A66C2;
+    /* LinkedIn blue */
+}
+
+.social-icons a[aria-label="Pinterest"]::after {
+    background: #E60023;
+    /* Pinterest red */
+}
+
 /* Hover/focus adjustments: pop the colored disc and add shadow */
+
 .social-icons a:hover::after,
 .social-icons a:focus::after {
-    transform: translateY(-3px) scale(1.02);
+    transform: scale(1.1);
     box-shadow: 0 10px 26px rgba(0, 0, 0, 0.2);
 }
 
-.social-icons a:focus {
+.social-icons a:focus-visible {
     outline: none;
+    box-shadow: 0 0 0 4px rgba(9, 122, 141, 0.16);
+    transform: translateY(-2px);
 }
 
-/* Brand-specific colors for social icons (use aria-label on anchors) */
-.social-icons a[aria-label="Facebook"] {
-    background: #1877F2;
-    color: #ffffff;
-    border-radius: 999px;
+@media (prefers-reduced-motion: reduce) {
+
+    .social-icons a,
+    .social-icons a::before,
+    .social-icons a::after {
+        transition: none !important;
+    }
 }
 
-.social-icons a[aria-label="Twitter"] {
-    background: #1DA1F2;
-    color: #ffffff;
-    border-radius: 999px;
-}
-
-.social-icons a[aria-label="Instagram"] {
-    background: linear-gradient(45deg, #f58529 0%, #dd2a7b 40%, #8134af 70%, #515bd4 100%);
-    color: #ffffff;
-    border-radius: 999px;
-}
-
-.social-icons a[aria-label="YouTube"] {
-    background: #FF0000;
-    color: #ffffff;
-    border-radius: 999px;
-}
-
-/* Hover/focus adjustments for brand icons */
-.social-icons a[aria-label="Facebook"]:hover,
-.social-icons a[aria-label="Twitter"]:hover,
-.social-icons a[aria-label="Instagram"]:hover,
-.social-icons a[aria-label="YouTube"]:hover {
-    transform: translateY(-4px) scale(1.04);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);
-}
-
-.social-icons a:focus {
-    outline: none;
-    box-shadow: 0 0 0 4px rgba(9, 122, 141, 0.12);
-}
 
 .footer-bottom {
     padding: .9rem 3%;
