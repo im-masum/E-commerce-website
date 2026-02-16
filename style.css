@@ -1212,8 +1212,8 @@ footer {
     width: 44px;
     height: 44px;
     border-radius: 999px;
-    background: var(--primary-color);
-    color: var(--text-primary);
+    background-color: #15e0fb;
+    color: red;
     display: inline-flex;
     align-items: center;
     justify-content: center;
