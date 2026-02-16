@@ -1090,11 +1090,10 @@ footer {
 .footer-bottom {
     text-align: center;
     width: 100%;
-    padding-top: 2rem;
+    padding: min(1rem, 8%);
     border-top: .5px solid rgb(60, 55, 55);
     color: var(--text-secondary);
 }
-
 
 .footer-bottom a {
     color: var(--text-primary);
