@@ -1221,9 +1221,13 @@ footer {
     border: none;
     cursor: pointer;
     opacity: 0;
-    transform: translateY(8px) scale(.98);
+    /* transform: translateY(8px) scale(.98); */
     transition: opacity 220ms ease, transform 220ms ease;
     z-index: 4000;
+}
+.back-to-top:hover {
+    transform: scale(1.1);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
 }
 
 .back-to-top.show {
