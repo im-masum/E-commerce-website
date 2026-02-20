@@ -1228,16 +1228,16 @@ footer {
     background-color: #0A66C2;
     transform: scale(1.1);
 }
-
+/* 
 .back-to-top.show {
     opacity: 1;
     transform: translateY(0) scale(1);
 }
 
-/* .back-to-top:focus {
+ .back-to-top:focus {
     outline: none;
     box-shadow: 0 0 0 4px rgba(9, 122, 141, 0.12);
-} */
+}  */
 
 .back-to-top .chev {
     font-size: 1.05rem;
