@@ -1221,13 +1221,12 @@ footer {
     border: none;
     cursor: pointer;
     opacity: 0;
-    /* transform: translateY(8px) scale(.98); */
-    transition: opacity 220ms ease, transform 220ms ease;
     z-index: 4000;
+    transition: all ease-in-out 0.3s;
 }
 .back-to-top:hover {
+    background-color: #0A66C2;
     transform: scale(1.1);
-    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
 }
 
 .back-to-top.show {
@@ -1235,10 +1234,10 @@ footer {
     transform: translateY(0) scale(1);
 }
 
-.back-to-top:focus {
+/* .back-to-top:focus {
     outline: none;
     box-shadow: 0 0 0 4px rgba(9, 122, 141, 0.12);
-}
+} */
 
 .back-to-top .chev {
     font-size: 1.05rem;
